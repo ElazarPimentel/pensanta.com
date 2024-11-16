@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#section-container {
+    color: aliceblue;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.section>div,
+.section>div>img {
+    padding: 10px;
+    /* Adjust this value as needed */
+}
+
+.date {
+    align-self: flex-start;
+}

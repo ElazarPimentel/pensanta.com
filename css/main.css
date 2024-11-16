@@ -1,0 +1,119 @@
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    color: #2B2B2B;
+    background-color: #E6E6DD;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+header {
+    background-color: #2B2B2B;
+    color: #E6E6DD;
+    margin: 0 20px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 15px black;
+}
+
+header img {
+    width: 20%;
+}
+
+header nav {
+    margin-right: 30px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px
+}
+
+main {
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.img img {
+    width: 70%;
+    margin: 0 auto;
+}
+
+main .textos {
+    text-align: center;
+}
+
+main .textos h1 {
+    margin: 10px 0;
+}
+
+main .textos h1 span {
+    display: block;
+}
+
+main .textos .boton {
+    background-color: #2B2B2B;
+    color: #E6E6DD;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 5px 5px 10px black;
+
+}
+
+/*  estilos de section  */
+
+section {
+    background-color: #2B2B2B;
+    color: #E6E6DD;
+    padding: 30px;
+    margin: 0 50px;
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 15px black;
+}
+
+nav ul li a {
+    text-decoration: underline;
+    color: #E6E6DD;
+}
+
+nav ul li a:hover {
+    color: #FFFFFF;
+    /* box-shadow: 5px 5px gray; */
+}
+
+section div {
+    text-align: center;
+}
+
+section div img {
+    width: 30%
+}
+
+section h3 {
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    margin: 10px 0px;
+}
