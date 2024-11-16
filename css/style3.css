@@ -1,9 +1,0 @@
-.grid-container {
-    border: 2px solid black;
-    display: grid;
-    grid-template-rows: repeat(4, 150px)
-}
-
-.grid-item {
-    border: 1px dotted blue
-}

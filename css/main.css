@@ -55,7 +55,9 @@ main {
 }
 
 main .textos {
-    text-align: center;
+    width: 80%;
+    text-align: left;
+    margin: 5rem 0 5rem 0;
 }
 
 main .textos h1 {
