@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background-color: #2B2B2B;
+    background-color: #2F2F2F;
     color: #E6E6DD;
     margin: 0 20px;
     padding: 10px;
@@ -81,7 +81,7 @@ main .textos .boton {
 /*  estilos de section  */
 
 section {
-    background-color: #2B2B2B;
+    background-color: #2F2F2F;
     color: #E6E6DD;
     padding: 30px;
     margin: 0 50px;
@@ -91,6 +91,7 @@ section {
     justify-content: space-around;
     flex-wrap: wrap;
     box-shadow: 5px 5px 15px black;
+    
 }
 
 nav ul li a {
@@ -111,11 +112,12 @@ section div img {
     width: 30%
 }
 
-section h3 {
+/* section h3 {
     margin: 10px;
-}
+} */
 
 footer {
     text-align: center;
     margin: 10px 0px;
+    /* box-shadow: 5px 5px 15px black; */
 }
