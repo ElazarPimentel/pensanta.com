@@ -2,25 +2,25 @@
 
 :root {
     /* Colors */
-    --color-text: #274472;          /* Dark Blue */
-    --color-bg: #c3e0e5;           /* Baby Blue */
-    --color-header-bg: #41729f;    /* Midnight Blue */
-    --color-header-text: #c3e0e5;  /* Baby Blue */
-    --color-section-bg: #5885af;   /* Blue Gray */
-    --color-section-text: #c3e0e5; /* Baby Blue */
-    --color-footer-text: #274472;  /* Dark Blue */
+    --color-text: #E0E0E0;          /* Light Gray */
+    --color-bg: #121212;            /* Dark Background */
+    --color-header-bg: #000000;     /* Slightly Lighter Dark */
+    --color-header-text: #E0E0E0;   /* Light Gray */
+    --color-section-bg: #2D2D2D;    /* Medium Dark Gray */
+    --color-section-text: #E0E0E0;  /* Light Gray */
+    --color-footer-text: #B0B0B0;   /* Muted Light Gray */
 
     /* Link Colors */
-    --link-color: #E6E6DD; /* Default link color */
-    --link-hover-color: #FFFFFF; /* Link hover color */
+    --link-color: #BB86FC;          /* Purple-ish */
+    --link-hover-color: #CF9FFF;    /* Lighter Purple */
 
     /* Fonts */
     --font-family: "Roboto", sans-serif;
     --font-weight: 300;
 
     /* Shadows */
-    --shadow-default: 0.313rem 0.313rem 0.938rem black;
-    --shadow-small: 0.313rem 0.313rem 0.625rem black;
+    --shadow-default: 0.313rem 0.313rem 0.938rem rgb(100, 99, 99);
+    --shadow-small: 0.313rem 0.313rem 0.625rem rgb(70, 67, 67);
 
     /* Layout */
     --padding-default: 0.625rem;
@@ -73,14 +73,14 @@ header {
     }
 
     .header-logo-line2 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 }
 
 header img {
     /* modify this to make it blur_edges.jpg bigger */
     width: var(--img-width-header);
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
 }
 
@@ -237,5 +237,31 @@ footer .social img {
     header .header-logo-line2 {
         font-size: .9rem;
     }
+}
+
+.sections-site {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.service-item {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Optional: Add some hover effect for a bit of pizzazz ✨ */
+.service-item:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 }
 
