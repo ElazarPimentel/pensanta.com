@@ -3,10 +3,35 @@
   --color-text-normal: lightgray;
   --color-text-dark: darkgray;
   --color-border-01: darkgray;
+
 }
 
 html {
   font-size: 16px;
+}
+
+* {
+
+  background-color: var(--color-background);
+  color: var(--color-text-normal);
+}
+
+
+.container-main {
+  width: 99%;
+  margin: 0 auto;
+}
+
+
+.shaddow {
+  box-shadow: 5px 5px 25px var(--color-border-01);
+
+
+}
+
+.border-01 {
+  border: 2px solid var(--color-border-01);
+  border-radius: 25px;
 }
 
 body {
@@ -18,18 +43,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-style: normal;
-  background-color: var(--color-background);
-  color: var(--color-text-normal);
-}
-
-.container-main {
-  width: 99%;
-  margin: 0 auto;
-}
-
-.border-01 {
-  border: 2px solid var(--color-border-01);
-  border-radius: 25px;
 }
 
 header {
@@ -40,7 +53,9 @@ header {
   align-items: center;
 }
 
-.title-01, .title-02 {
+
+.title-01 {
+  font-size: 1rem;
   font-weight: 100;
   font-style: normal;
   padding: 0;
@@ -48,12 +63,13 @@ header {
   text-align: center;
 }
 
-.title-01 {
-  font-size: 1rem;
-}
-
 .title-02 {
   font-size: 1.2rem;
+  font-weight: 100;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 main {
@@ -67,13 +83,14 @@ footer {
   flex: 0 0 12vh;
   text-align: center;
   color: var(--color-text-dark);
-}
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.1rem;
-  font-size: 1.4rem;
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.1rem;
+    font-size: 1.4rem;
+  }
+
 }
 
 h1 {
@@ -87,9 +104,15 @@ h1 {
   width: 100%;
 }
 
-#logo-left, #text-right {
+#logo-left {
   flex: 0 0 auto;
 }
+
+#text-right {
+  flex: 0 0 auto;
+  text-align: left;
+}
+
 
 /* Tablet breakpoint */
 @media screen and (min-width: 768px) {
