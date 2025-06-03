@@ -41,7 +41,7 @@ body {
   padding: .4rem 0;
   gap: .7rem;
   font-family: "Roboto", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -113,6 +113,46 @@ h1 {
   text-align: left;
 }
 
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.logo-text {
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin: 0;
+  color: var(--color-text-normal);
+  /* text-transform: uppercase; */
+}
+
+.language-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.lang-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: var(--color-text-normal);
+  border: 2px solid var(--color-border-01);
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.lang-button:hover {
+  background-color: var(--color-border-01);
+  color: var(--color-background);
+}
 
 /* Tablet breakpoint */
 @media screen and (min-width: 768px) {
