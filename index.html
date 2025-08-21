@@ -7,6 +7,12 @@
     <meta name="description" content="Administramos proyectos aplicando PMBOK, SAFe y Waterfall. Product Owners externos con experiencia en software, delivery e infraestructura. Resultados garantizados.">
     <meta name="keywords" content="gestión de proyectos, PMBOK, SAFe, Waterfall, Product Owner, desarrollo software, Argentina">
     <meta name="author" content="Pensanta">
+    
+    <!-- Performance and resource hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://wa.me">
+    
+    <!-- Canonical and language alternates -->
     <link rel="canonical" href="https://pensanta.com/">
     <link rel="alternate" hreflang="en" href="https://pensanta.com/index-eng.html">
     <link rel="alternate" hreflang="es" href="https://pensanta.com/">
@@ -24,8 +30,10 @@
     <meta property="twitter:title" content="Pensanta - Gestión de Proyectos y Productos Digitales">
     <meta property="twitter:description" content="Administramos proyectos aplicando PMBOK, SAFe y Waterfall. Product Owners externos con experiencia.">
     
+    <!-- Optimized CSS loading -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -44,7 +52,10 @@
     </script>
 </head>
 <body>
-    <header class="container-main border-01 ">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+    
+    <header class="container-main border-01" role="banner">
         <div id="header-container">
             <div id="logo-left">
                 <h2 class="logo-text">Pensanta</h2>
@@ -53,11 +64,11 @@
                 <p class="title-01">Program, Project and Digital Product Management</p>
             </div>
         </div>
-        <div class="language-switcher">
-            <a href="index-eng.html" class="lang-button">EN</a>
-        </div>
+        <nav class="language-switcher" role="navigation" aria-label="Selector de idioma">
+            <a href="index-eng.html" class="lang-button" lang="en" aria-label="Cambiar a inglés">EN</a>
+        </nav>
     </header>
-    <main class="container-main border-01 ">
+    <main id="main-content" class="container-main border-01" role="main">
         <h1>Gestión de Proyectos y Productos Digitales</h1>
         <p>Administramos proyectos aplicando PMBOK¹, SAFe² y Waterfall según las necesidades del caso.</p>
         
@@ -73,23 +84,31 @@
         
         <p>Gestionamos proyectos complejos con claridad, orientación a resultados y la más fluída comunicación con todos los interesados.</p>
         
-        <div class="contact-links">
-            <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Send us an email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://wa.me/5491137990312" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
+        <section class="contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="visually-hidden">Contacto</h2>
+            <div class="contact-links">
+                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Envíanos un email" class="contact-link email-link">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span class="contact-text">Email</span>
+                </a>
+                <a href="https://wa.me/5491137990312" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp" class="contact-link whatsapp-link">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span class="contact-text">WhatsApp</span>
+                </a>
+            </div>
+        </section>
         
-        <hr>
+        <hr role="separator" aria-label="Separación de contenido">
         
-        <p><small>¹ <strong>PMBOK</strong>: Project Management Body of Knowledge. Aunque en la práctica se lo suele llamar "el libro PMBOK", el término se refiere al cuerpo de conocimiento, métodos y buenas prácticas desarrollados por el Project Management Institute (PMI), más allá de su formato físico o digital.</small></p>
-        
-        <p><small>² <strong>SAFe</strong>: Scaled Agile Framework. Es un marco de trabajo para aplicar principios ágiles a nivel organizacional, coordinando equipos múltiples bajo una visión compartida, con estructura de entregas en programas y trenes de liberación.</small></p>
+        <section aria-labelledby="definitions-heading">
+            <h2 id="definitions-heading" class="visually-hidden">Definiciones de metodologías</h2>
+            <p><small>¹ <strong>PMBOK</strong>: Project Management Body of Knowledge. Aunque en la práctica se lo suele llamar "el libro PMBOK", el término se refiere al cuerpo de conocimiento, métodos y buenas prácticas desarrollados por el Project Management Institute (PMI), más allá de su formato físico o digital.</small></p>
+            
+            <p><small>² <strong>SAFe</strong>: Scaled Agile Framework. Es un marco de trabajo para aplicar principios ágiles a nivel organizacional, coordinando equipos múltiples bajo una visión compartida, con estructura de entregas en programas y trenes de liberación.</small></p>
+        </section>
     </main>
-    <footer class="container-main border-01">
-        <p>Todos los derechos reservados Pensanta.com 2024</p>
+    <footer class="container-main border-01" role="contentinfo">
+        <p>&copy; 2024 Pensanta.com. Todos los derechos reservados.</p>
         <!-- <div class="social-icons">
             <a href="https://www.instagram.com/pensantacom" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                 <i class="fab fa-instagram"></i>
