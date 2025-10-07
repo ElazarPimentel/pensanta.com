@@ -209,31 +209,10 @@ body {
 }
 
 /* Screen reader improvements */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
 /* Focus improvements for keyboard navigation */
-.focus-trap {
-  outline: none;
-}
 
 /* Announce dynamic content changes to screen readers */
-.live-region {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
 
 .skip-link {
   position: absolute;
@@ -254,15 +233,11 @@ body {
 }
 
 /* Focus styles for better accessibility */
-:focus-visible {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
-  border-radius: 0.25rem;
-}
 
 .container-main {
   width: 99%;
   margin: 0 auto;
+  padding: 0.7rem;
 }
 
 .border-01 {
@@ -274,7 +249,7 @@ body {
   padding: var(--space-sm);
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1rem;
   min-height: 100vh;
   font-weight: 400;
   font-style: normal;
@@ -379,25 +354,33 @@ h1 {
   font-size: var(--font-size-xl);
   font-weight: 500;
   color: var(--color-text-primary);
-  line-height: var(--line-height-tight);
+  /*line-height: var(--line-height-tight);*/
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 h2 {
-  font-size: var(--font-size-lg);
+  font-size: 1.3rem;
   font-weight: 500;
   color: var(--color-text-primary);
   line-height: var(--line-height-tight);
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 
 p {
   line-height: var(--line-height-normal);
   color: var(--color-text-secondary);
   text-align: justify;
-}
-
-small {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
 }
 
 /* Section layout */
@@ -417,6 +400,7 @@ small {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
 }
 
 .section-bottom {
@@ -426,9 +410,6 @@ small {
 }
 
 /* Contact section */
-.contact-section {
-  margin: var(--space-xl) 0;
-}
 
 .contact-links {
   display: flex;
@@ -704,7 +685,7 @@ footer.container-main {
 }
 
 /* Smooth transitions for all interactive elements */
-a, button, input, textarea {
+a {
   transition: all var(--transition-fast);
 }
 
@@ -720,14 +701,6 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
 }
 
 /* Subtle highlight on section focus */
-.contact-section:focus-within {
-  outline: none;
-}
-
-.contact-section:focus-within .contact-links {
-  transform: scale(1.02);
-  transition: transform var(--transition-normal);
-}
 
 /* Improved focus indicators */
 .contact-link:focus-visible {
@@ -863,7 +836,7 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
   
   /* Better layout for tablet */
   main {
-    padding: var(--space-xl);
+    padding: 0 var(--space-xl) var(--space-xl);
   }
   
   h1 {
@@ -897,7 +870,7 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
   
   /* Desktop-specific enhancements */
   main {
-    padding: var(--space-2xl);
+    padding: 0 var(--space-2xl) var(--space-2xl);
   }
   
   h1 {
@@ -926,7 +899,7 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
   }
   
   main {
-    padding: var(--space-3xl);
+    padding: 0 var(--space-3xl) var(--space-3xl);
   }
   
   .contact-links {
