@@ -1,0 +1,48 @@
+name: LLM Instructions for Backlinking Modifications on pensanta.com
+version: 1.0
+date: 2025-10-17
+description: Instructions for an LLM to perform backlinking modifications on the pensanta.com website to improve SEO and link to elazarpimentel.com.
+
+instructions:
+  - task: Create or update an "About" page/section on pensanta.com
+    description: Add a dedicated About page or section introducing Pensanta as the company founded by Elazar Pimentel. Include a bio linking to elazarpimentel.com.
+    details:
+      - Content: "Pensanta is a digital solutions company founded by Elazar Pimentel. Learn more about the founder and his expertise at https://elazarpimentel.com."
+      - Link: Include a hyperlink to https://elazarpimentel.com with anchor text like "Elazar Pimentel" or "founder".
+      - SEO: Use keywords such as "digital solutions Buenos Aires", "custom software Argentina" if applicable.
+    priority: high
+
+  - task: Add backlinks to elazarpimentel.com on the homepage
+    description: Integrate links to elazarpimentel.com on the homepage for better authority and reciprocal linking.
+    details:
+      - Placement: In a "Meet the Founder" or services section.
+      - Link: "Explore Elazar Pimentel's portfolio and expertise: https://elazarpimentel.com"
+      - Ensure: Links open in new tab with rel="noopener".
+    priority: high
+
+  - task: Modify footers on client websites/webapps created by Pensanta
+    description: For websites/webapps built by Pensanta, update footers to include links to both pensanta.com and elazarpimentel.com.
+    details:
+      - Current: "Created by Pensanta.com"
+      - Updated: "Created by <a href='https://pensanta.com'>Pensanta</a> | <a href='https://elazarpimentel.com'>Elazar Pimentel</a>"
+      - Apply to: All future and existing client projects if possible.
+    priority: medium
+
+  - task: Ensure reciprocal links
+    description: Confirm that elazarpimentel.com links back to pensanta.com (already done via footer links).
+    details:
+      - Verify: Footers on elazarpimentel.com include "Created by Pensanta" linking to https://pensanta.com.
+      - Benefit: Creates a network of internal/external links for SEO.
+    priority: low
+
+  - task: Monitor and update backlinks
+    description: Regularly check backlinks in tools like Ahrefs or GSC, and update as needed.
+    details:
+      - Tools: Use Google Search Console to track linking domains.
+      - Frequency: Quarterly review.
+    priority: low
+
+metadata:
+  author: Elazar Pimentel
+  purpose: Automate or guide LLM-assisted website modifications for backlinking.
+  notes: These instructions aim to build domain authority and improve search rankings by creating quality backlinks between related sites.
