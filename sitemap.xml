@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage Spanish -->
+  <url>
+    <loc>https://pensanta.com/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/index-eng.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/"/>
+  </url>
+  
+  <!-- Homepage English -->
+  <url>
+    <loc>https://pensanta.com/index-eng.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/index-eng.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/"/>
+  </url>
+  
+  <!-- About Spanish -->
+  <url>
+    <loc>https://pensanta.com/about.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/about-eng.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/about.html"/>
+  </url>
+  
+  <!-- About English -->
+  <url>
+    <loc>https://pensanta.com/about-eng.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/about-eng.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/about.html"/>
+  </url>
+  
+  <!-- Tools Spanish -->
+  <url>
+    <loc>https://pensanta.com/tools.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
