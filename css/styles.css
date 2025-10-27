@@ -528,15 +528,56 @@ footer {
   flex: 0 0 auto;
   padding: var(--space-md);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: var(--space-sm);
-  text-align: center;
+  gap: var(--space-md);
 }
 
 footer p {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
+  margin: 0;
+}
+
+footer small {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  border: 1px solid #505050;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #b3b3b3;
+  transition: all 0.3s ease;
+}
+
+footer small:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: #606060;
+}
+
+footer small svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+footer small a {
+  color: #e0e0e0;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+footer small a:hover {
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 /* Animations and visual enhancements */
@@ -737,31 +778,38 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
   body {
     padding: var(--space-xs);
   }
-  
+
   .container-main {
     width: 100%;
     margin: 0;
   }
-  
+
   .logo-text {
     font-size: var(--font-size-xl);
   }
-  
+
   .title-01 {
     font-size: var(--font-size-xs);
     display: none; /* Hide tagline on very small screens */
   }
-  
+
   #header-container {
     justify-content: center;
   }
-  
+
   #logo-left {
     margin-left: 0;
   }
-  
+
   #text-right {
     margin-right: 0; /* No margin needed when title is hidden */
+  }
+
+  /* Stack footer on small mobile */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
   }
 }
 
@@ -770,21 +818,21 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
   .logo-text {
     font-size: var(--font-size-2xl);
   }
-  
+
   .title-01 {
     font-size: var(--font-size-sm);
   }
-  
+
   #text-right {
     margin-right: 3rem; /* Reduce space for smaller screens */
   }
-  
+
   .contact-links {
     flex-direction: column;
     align-items: center;
     gap: var(--space-md);
   }
-  
+
   .contact-link {
     flex-direction: row;
     justify-content: center;
@@ -793,20 +841,27 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
     /* Enhanced touch targets for mobile */
     min-height: 44px;
   }
-  
+
   .contact-link i {
     font-size: var(--font-size-xl);
   }
-  
+
   /* Better spacing for mobile reading */
   main p {
     margin-bottom: var(--space-md);
     line-height: var(--line-height-relaxed);
   }
-  
+
   h1 {
     margin-bottom: var(--space-lg);
     text-align: center;
+  }
+
+  /* Stack footer on mobile */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
   }
 }
 
