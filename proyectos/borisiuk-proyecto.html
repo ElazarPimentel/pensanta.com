@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#000000">
+    <title>Proyecto Borisiuk - Documentación | Pensanta</title>
+    <meta name="description" content="Documentación técnica del proyecto Borisiuk - Sistema multi-dominio para fábrica de mochilas industriales">
+    <meta name="author" content="Pensanta">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/img/logo-negro-01-normal.jpeg">
+    <link rel="apple-touch-icon" href="/img/logo-negro-02-medium.jpeg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Project-specific styles */
+        .project-header {
+            border-bottom: 2px solid var(--color-border-primary);
+            padding-bottom: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .project-title {
+            font-size: var(--font-size-3xl);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .project-subtitle {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-base);
+        }
+
+        .description-box {
+            background: rgba(74, 158, 255, 0.05);
+            border-left: 4px solid var(--color-accent);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            border-radius: var(--radius-md);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+        }
+
+        .info-card h3 {
+            color: var(--color-accent);
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+        }
+
+        .info-card p {
+            margin: var(--space-sm) 0;
+            text-align: left;
+        }
+
+        .info-label {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .info-value {
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+
+        /* Table styles */
+        .table-container {
+            overflow-x: auto;
+            margin: var(--space-xl) 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--font-size-sm);
+        }
+
+        thead {
+            background: rgba(74, 158, 255, 0.1);
+        }
+
+        th {
+            padding: var(--space-md);
+            text-align: left;
+            color: var(--color-text-primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-border-primary);
+        }
+
+        td {
+            padding: var(--space-md);
+            border-bottom: 1px solid var(--color-border-primary);
+            color: var(--color-text-secondary);
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+        }
+
+        .status-online {
+            background: rgba(0, 208, 132, 0.2);
+            color: var(--color-success);
+        }
+
+        .status-offline {
+            background: rgba(255, 87, 34, 0.2);
+            color: var(--color-error);
+        }
+
+        .hashtags {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-xs);
+            color: var(--color-accent);
+        }
+
+        /* Task list */
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-xl) 0;
+        }
+
+        .task-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-md) 0;
+        }
+
+        .task-item.priority-alta {
+            border-left: 4px solid var(--color-error);
+        }
+
+        .task-item.priority-media {
+            border-left: 4px solid var(--color-warning);
+        }
+
+        .task-item.priority-baja {
+            border-left: 4px solid var(--color-success);
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            margin-left: var(--space-sm);
+        }
+
+        .priority-alta .priority-badge {
+            background: var(--color-error);
+            color: var(--color-background);
+        }
+
+        .priority-media .priority-badge {
+            background: var(--color-warning);
+            color: var(--color-background);
+        }
+
+        .priority-baja .priority-badge {
+            background: var(--color-success);
+            color: var(--color-background);
+        }
+
+        .task-item h4 {
+            color: var(--color-text-primary);
+            margin: 0 0 var(--space-sm) 0;
+        }
+
+        .task-item p {
+            color: var(--color-text-secondary);
+            margin: var(--space-sm) 0 0 0;
+            text-align: left;
+        }
+
+        /* Maintenance boxes */
+        .maintenance-box {
+            background: rgba(255, 184, 0, 0.05);
+            border: 1px solid var(--color-warning);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .maintenance-box.critical {
+            background: rgba(255, 87, 34, 0.05);
+            border-color: var(--color-error);
+        }
+
+        .maintenance-box h4 {
+            color: var(--color-text-primary);
+            margin: 0 0 var(--space-md) 0;
+        }
+
+        .maintenance-box ul {
+            margin: var(--space-sm) 0 0 var(--space-lg);
+            color: var(--color-text-secondary);
+        }
+
+        .maintenance-box li {
+            margin: var(--space-sm) 0;
+        }
+
+        .critical-text {
+            color: var(--color-error);
+            font-weight: 600;
+        }
+
+        /* Cost summary */
+        .cost-summary {
+            background: rgba(0, 208, 132, 0.05);
+            border: 1px solid var(--color-success);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .cost-total {
+            font-size: var(--font-size-4xl);
+            color: var(--color-success);
+            font-weight: 700;
+            margin: var(--space-md) 0;
+        }
+
+        .cost-table {
+            margin: var(--space-xl) auto;
+            max-width: 600px;
+        }
+
+        /* Section dividers */
+        .section-divider {
+            border-top: 2px solid var(--color-border-primary);
+            margin: var(--space-3xl) 0 var(--space-xl) 0;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-lg);
+            background-color: transparent;
+            border: 2px solid var(--color-border-primary);
+            border-radius: var(--radius-lg);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            margin-bottom: var(--space-xl);
+        }
+
+        .back-button:hover {
+            background-color: var(--color-hover-bg);
+            border-color: var(--color-accent);
+            color: var(--color-text-primary);
+            transform: translateX(-4px);
+        }
+
+        @media screen and (max-width: 767px) {
+            .table-container {
+                font-size: var(--font-size-xs);
+            }
+
+            th, td {
+                padding: var(--space-sm);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-title {
+                font-size: var(--font-size-2xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <header class="container-main border-01" role="banner">
+        <div id="header-container">
+            <div id="logo-left">
+                <a href="../index.html" aria-label="Ir a inicio">
+                    <h2 class="logo-text">Pensanta</h2>
+                </a>
+            </div>
+            <div id="text-right">
+                <p class="title-01">Program, Project and Digital Product Management</p>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="container-main border-01" role="main">
+        <a href="../index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Inicio</span>
+        </a>
+
+        <div class="project-header">
+            <h1 class="project-title">Proyecto Borisiuk</h1>
+            <p class="project-subtitle">Sistema Multi-Dominio para Fábrica de Mochilas</p>
+            <p class="project-subtitle">Cliente: Natacha Borysiuk | Fecha: 27 de Octubre 2025</p>
+        </div>
+
+        <!-- Description -->
+        <section>
+            <h2>Descripción General del Proyecto</h2>
+            <div class="description-box">
+                <p>El proyecto Borisiuk consiste en un sistema de sitios web multi-dominio para la fábrica de mochilas, bolsos y cartucheras industriales de Natacha Borysiuk. El sistema está compuesto por <strong>8 sitios web independientes</strong> que comparten una arquitectura común y se alimentan de la misma cuenta de Instagram (@fabricamosmochilas) para mostrar productos de forma dinámica.</p>
+
+                <p style="margin-top: var(--space-md);">Cada sitio web está optimizado para palabras clave específicas (SEO), lo que permite captar búsquedas especializadas en Google para diferentes tipos de productos: mochilas, cartucheras, botineros, etc. Todos los sitios están desplegados en infraestructura gratuita (Vercel) y utilizan un servidor centralizado de API de Instagram (AWS EC2) para obtener las publicaciones de forma eficiente y segura.</p>
+            </div>
+        </section>
+
+        <!-- Info Cards -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-code"></i> Tecnología</h3>
+                <p><span class="info-label">Frontend:</span> <span class="info-value">React 19 + Next.js 15 + TypeScript</span></p>
+                <p><span class="info-label">Hosting:</span> <span class="info-value">Vercel (Plataforma gratuita)</span></p>
+                <p><span class="info-label">Backend API:</span> <span class="info-value">Node.js + Express.js en AWS EC2</span></p>
+                <p><span class="info-label">Instagram:</span> <span class="info-value">@fabricamosmochilas</span></p>
+            </div>
+
+            <div class="info-card">
+                <h3><i class="fas fa-user"></i> Contacto</h3>
+                <p><span class="info-label">Titular:</span> <span class="info-value">Natacha Borysiuk</span></p>
+                <p><span class="info-label">Teléfono:</span> <span class="info-value">(011) 61030569</span></p>
+                <p><span class="info-label">Email:</span> <span class="info-value">natacha.borysiuk@gmail.com</span></p>
+                <p><span class="info-label">Instagram:</span> <span class="info-value">@fabricamosmochilas</span></p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Domains Table -->
+        <section>
+            <h2>Estado de Dominios</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dominio</th>
+                            <th>Nombre del Sitio</th>
+                            <th>DNS</th>
+                            <th>Online</th>
+                            <th>Hashtags Actuales</th>
+                            <th>Hashtags Recomendados</th>
+                            <th>Comentarios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>fabricademochilas.com.ar</strong></td>
+                            <td>Fábrica de Mochilas</td>
+                            <td><span class="status-badge status-online">Sí</span></td>
+                            <td><span class="status-badge status-online">Sí</span></td>
+                            <td class="hashtags">#mochilas #mochilaspormayor #mochilasconlogo</td>
+                            <td class="hashtags">#fabricademochilas #mochilasindustriales #mochilasempresas</td>
+                            <td>Sitio principal en producción. Funciona correctamente.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>cartucheraspormayor.com.ar</strong></td>
+                            <td>Cartucheras por Mayor</td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td>N/A</td>
+                            <td class="hashtags">#cartucheras #cartucheraspormayor #cartucherasconlogo</td>
+                            <td>Redirige a officesite.com.ar. Requiere configuración DNS.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>mochilaseconomicas.com.ar</strong></td>
+                            <td>Mochilas Económicas</td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td>N/A</td>
+                            <td class="hashtags">#mochilaseconomicas #mochilasbaratas</td>
+                            <td>Sin respuesta HTTP. Requiere configuración DNS.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>tallerdemochilas.com.ar</strong></td>
+                            <td>Taller de Mochilas</td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td>N/A</td>
+                            <td class="hashtags">#tallerdemochilas #confeccionmochilas</td>
+                            <td>Pendiente confirmación NIC. Requiere DNS y despliegue.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>mochilasbaratas.com.ar</strong></td>
+                            <td>Mochilas Baratas</td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td>N/A</td>
+                            <td class="hashtags">#mochilasbaratas #ofertas</td>
+                            <td>Pendiente confirmación NIC. Requiere DNS y despliegue.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>mochilasconlogo.com.ar</strong></td>
+                            <td>Mochilas con Logo</td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td>N/A</td>
+                            <td class="hashtags">#mochilasconlogo #mochilaspersonalizadas</td>
+                            <td>Pendiente confirmación NIC. Requiere DNS y despliegue.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>cartucherasconlogo.com.ar</strong></td>
+                            <td>Cartucheras con Logo</td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td><span class="status-badge status-offline">No</span></td>
+                            <td>N/A</td>
+                            <td class="hashtags">#cartucherasconlogo #kitsescolares</td>
+                            <td>Pendiente confirmación NIC. Requiere DNS y despliegue.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>officesite.com.ar</strong></td>
+                            <td>Officesite - Productos Promocionales</td>
+                            <td><span class="status-badge status-online">Sí</span></td>
+                            <td><span class="status-badge status-online">Sí</span></td>
+                            <td class="hashtags">#mochilas #cartucheras #botineros #mates #kits #gorros</td>
+                            <td class="hashtags">#productospromocionales #merchandising</td>
+                            <td>Sistema avanzado de agrupamiento por hashtags. En www.officesite.com.ar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Infrastructure -->
+        <section>
+            <h2>Infraestructura Técnica</h2>
+
+            <h3><i class="fas fa-server"></i> Servidor API de Instagram</h3>
+            <div class="info-card">
+                <p><span class="info-label">Ubicación:</span> <span class="info-value">AWS EC2 Free Tier (boris.pensanta.com)</span></p>
+                <p><span class="info-label">IP Pública:</span> <span class="info-value">3.143.110.149</span></p>
+                <p><span class="info-label">Puerto:</span> <span class="info-value">3000</span></p>
+                <p><span class="info-label">Endpoint:</span> <span class="info-value">http://boris.pensanta.com:3000/api/instagram</span></p>
+                <p><span class="info-label">Caché:</span> <span class="info-value">1 hora (reduce llamadas a Instagram API)</span></p>
+                <p><span class="info-label">Estado:</span> <span class="status-badge status-online">Activo y funcionando</span></p>
+                <p><span class="info-label">Mantenimiento:</span> <span class="critical-text">Requiere renovación de token cada 60 días</span></p>
+            </div>
+
+            <h3><i class="fas fa-globe"></i> Sitios Frontend</h3>
+            <div class="info-card">
+                <p><span class="info-label">Plataforma:</span> <span class="info-value">Vercel (hosting gratuito)</span></p>
+                <p><span class="info-label">Sitios Activos:</span> <span class="info-value">2</span></p>
+                <p><span class="info-label">Sitios Pendientes:</span> <span class="info-value">6</span></p>
+                <p><span class="info-label">Costo Mensual:</span> <span class="info-value">$0 USD</span></p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Tasks -->
+        <section>
+            <h2>Próximos Pasos</h2>
+            <ul class="task-list">
+                <li class="task-item priority-alta">
+                    <h4>Configurar DNS de 6 dominios restantes<span class="priority-badge">ALTA</span></h4>
+                    <p>Apuntar DNS a Vercel para cartucheraspormayor, mochilaseconomicas, tallerdemochilas, mochilasbaratas, mochilasconlogo, cartucherasconlogo</p>
+                </li>
+                <li class="task-item priority-alta">
+                    <h4>Desplegar sitios en Vercel<span class="priority-badge">ALTA</span></h4>
+                    <p>Conectar repositorios GitHub con Vercel y configurar dominios personalizados</p>
+                </li>
+                <li class="task-item priority-media">
+                    <h4>Optimizar publicaciones de Instagram<span class="priority-badge">MEDIA</span></h4>
+                    <p>Agregar hashtags específicos a las publicaciones para mejorar el filtrado automático por categorías</p>
+                </li>
+                <li class="task-item priority-media">
+                    <h4>Configurar Google Search Console<span class="priority-badge">MEDIA</span></h4>
+                    <p>Registrar cada dominio en Google Search Console para monitoreo de SEO</p>
+                </li>
+                <li class="task-item priority-baja">
+                    <h4>Crear sitemap.xml para cada sitio<span class="priority-badge">BAJA</span></h4>
+                    <p>Facilitar indexación en buscadores</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Maintenance -->
+        <section>
+            <h2>Información de Mantenimiento</h2>
+
+            <div class="maintenance-box">
+                <h4><i class="fas fa-calendar-alt"></i> Frecuencia Mensual</h4>
+                <ul>
+                    <li>Verificar estado del servidor API (boris.pensanta.com:3000)</li>
+                    <li>Revisar logs de errores en AWS EC2</li>
+                    <li>Comprobar que todos los sitios estén online</li>
+                </ul>
+            </div>
+
+            <div class="maintenance-box critical">
+                <h4><i class="fas fa-exclamation-triangle"></i> <span class="critical-text">Cada 60 Días (CRÍTICO)</span></h4>
+                <ul>
+                    <li><strong class="critical-text">Renovar token de acceso de Instagram (vence cada 60 días)</strong></li>
+                    <li>Procedimiento documentado en borisiuk-instagram-api/README.md</li>
+                </ul>
+            </div>
+
+            <div class="maintenance-box">
+                <h4><i class="fas fa-tools"></i> Según Necesidad</h4>
+                <ul>
+                    <li>Agregar nuevos hashtags en lib/hashtag-grouper.ts si se incorporan nuevas categorías</li>
+                    <li>Actualizar contenido y versiones de sitios</li>
+                    <li>Limpiar caché si las fotos de Instagram no se actualizan</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Costs -->
+        <section>
+            <h2>Costos Actuales</h2>
+            <div class="cost-summary">
+                <div class="cost-total">$0 USD/mes</div>
+
+                <h3>Desglose de Costos</h3>
+                <div class="table-container cost-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Costo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AWS EC2 (servidor API)</td>
+                                <td>$0 (Free Tier - 750 horas/mes)</td>
+                            </tr>
+                            <tr>
+                                <td>Vercel (hosting 8 sitios)</td>
+                                <td>$0 (Free Tier - 100GB bandwidth/mes)</td>
+                            </tr>
+                            <tr>
+                                <td>Instagram API</td>
+                                <td>$0 (API gratuita de Meta)</td>
+                            </tr>
+                            <tr>
+                                <td>Dominios .com.ar</td>
+                                <td>Ya pagados por el cliente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Escenarios de Upgrade</h3>
+                <ul style="text-align: left; margin: var(--space-lg) auto; max-width: 600px;">
+                    <li><strong>Si tráfico supera 100GB/mes:</strong> $20 USD/mes (Vercel Pro)</li>
+                    <li><strong>Si se necesita más poder de servidor:</strong> ~$10 USD/mes (EC2 t3.micro fuera de free tier)</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container-main border-01" role="contentinfo">
+        <p>&copy; 2025 Pensanta.com. Todos los derechos reservados.</p>
+        <p style="margin-top: var(--space-sm); font-size: var(--font-size-xs);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            Digitally carved by Pensanta.com
+        </p>
+    </footer>
+</body>
+
+</html>
