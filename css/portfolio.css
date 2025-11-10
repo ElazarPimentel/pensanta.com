@@ -23,6 +23,19 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* Flip layout for alternating cards */
+.portfolio-card.flip {
+    grid-template-columns: 1fr 1fr;
+}
+
+.portfolio-card.flip .portfolio-image {
+    order: 2;
+}
+
+.portfolio-card.flip .portfolio-content {
+    order: 1;
+}
+
 /* Portfolio Image */
 .portfolio-image {
     position: relative;
