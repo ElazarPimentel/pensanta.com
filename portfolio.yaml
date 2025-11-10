@@ -1,0 +1,25 @@
+projects:
+  - id: lodevictor
+    client: "Gastronomía: Lo de Victor"
+    url: "https://lodevictor.com"
+    description: "Preencia digital, contacto con clientes, posicionamiento en motores de búsqueda"
+    tech_stack:
+      - "HTML"
+      - "CSS"
+      - "JavaScript"
+    year: 2024
+    image: "lodevictor-800x500.webp"
+    
+# Add more projects below
+
+# - id: another-client
+
+#   client: "Client Name"
+
+  #   url: "https://example.com"
+  #   description: "Project description here"
+  #   tech_stack:
+  #     - "React"
+  #     - "Node.js"
+  #   year: 2024
+  #   image: "client-slug.webp"
