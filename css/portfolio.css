@@ -1,3 +1,17 @@
+/* Portfolio Intro Text */
+.portfolio-intro {
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border-primary);
+    margin-bottom: var(--space-3xl);
+}
+
+/* Portfolio H1 with left border */
+.section-middle h1:first-of-type {
+    padding-left: var(--space-lg);
+    border-left: 3px solid var(--color-border-primary);
+    margin-bottom: var(--space-lg);
+}
+
 /* Portfolio Grid Layout */
 .portfolio-grid {
     display: grid;
