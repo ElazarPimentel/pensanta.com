@@ -35,6 +35,7 @@ Thumbs.db
 *.tmp
 *.temp
 *.log
+logs/
 
 # Cache
 .cache/
@@ -44,3 +45,9 @@ Thumbs.db
 CLAUDE.md
 server.js
 deploytohostinger.sh
+gitpush.sh
+add-portfolio-site.sh
+screenshot-temp.js
+batch-screenshots.js
+iam01.txt
+portfolio.yaml
