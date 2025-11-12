@@ -1,0 +1,212 @@
+# Digitally Carved Footer Component
+# Instructions for implementing the "Digitally carved by Pensanta.com" footer element
+
+component:
+  name: "Digitally Carved Footer"
+  description: "Footer badge with icon, text, and link to Pensanta.com"
+  author: "Elazar Pimentel"
+  version: "1.0"
+
+# HTML Structure
+html:
+  structure: |
+    <small>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      <span>Digitally carved by <a href="https://Pensanta.com" target="_blank" rel="noopener">Pensanta.com</a></span>
+    </small>
+
+  notes:
+    - Wrap text and link in <span> to prevent flex wrapping issues
+    - SVG uses currentColor to inherit text color
+    - Link opens in new tab with noopener for security
+
+# React/TSX Structure
+tsx:
+  component: |
+    <small className="digitally-carved">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      <span>Digitally carved by <a href="https://Pensanta.com" target="_blank" rel="noopener">Pensanta.com</a></span>
+    </small>
+
+  notes:
+    - Use className instead of class
+    - strokeWidth is camelCase in React
+    - Same structure as HTML
+
+# CSS Styling
+css:
+  styles: |
+    footer small,
+    .digitally-carved {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #3a3a3a;
+      border: 1px solid #505050;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #b3b3b3;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    footer small:hover,
+    .digitally-carved:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      border-color: #606060;
+    }
+    
+    footer small svg,
+    .digitally-carved svg {
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+    
+    footer small a,
+    .digitally-carved a {
+      color: #e0e0e0;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    footer small a:hover,
+    .digitally-carved a:hover {
+      color: white;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+
+# SCSS Styling (Nested)
+scss:
+  styles: |
+    footer small,
+    .digitally-carved {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #3a3a3a;
+      border: 1px solid #505050;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #b3b3b3;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        border-color: #606060;
+      }
+    
+      svg {
+        flex-shrink: 0;
+        opacity: 0.8;
+      }
+    
+      a {
+        color: #e0e0e0;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    
+        &:hover {
+          color: white;
+          text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+
+# Design Tokens
+design_tokens:
+  colors:
+    background: "#3a3a3a"
+    border: "#505050"
+    border_hover: "#606060"
+    text: "#b3b3b3"
+    link: "#e0e0e0"
+    link_hover: "#ffffff"
+
+  spacing:
+    gap: "0.5rem"
+    padding: "0.5rem 1rem"
+
+  typography:
+    font_size: "0.875rem"
+    font_weight: "500"
+    link_font_weight: "600"
+
+  effects:
+    border_radius: "2rem"
+    shadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
+    shadow_hover: "0 4px 12px rgba(0, 0, 0, 0.4)"
+    link_shadow: "0 0 8px rgba(255, 255, 255, 0.3)"
+    transform_hover: "translateY(-2px)"
+
+  transitions:
+    duration: "0.3s"
+    link_duration: "0.2s"
+    timing: "ease"
+
+# Implementation Notes
+implementation:
+  critical:
+    - "Wrap text and link in <span> to prevent flex wrapping"
+    - "Use white-space: nowrap to prevent text breaking"
+    - "SVG must use currentColor for stroke to inherit text color"
+    - "Link must have target='_blank' and rel='noopener'"
+
+  optional:
+    - "Can use .digitally-carved class instead of footer small selector"
+    - "Colors can be customized using CSS variables"
+    - "SVG icon can be replaced with different icon if needed"
+
+  accessibility:
+    - "Link has aria-label or descriptive text"
+    - "SVG has no aria-label needed (decorative)"
+    - "Contrast ratio meets WCAG standards"
+
+# Usage Examples
+examples:
+  html: |
+    <footer>
+      <p>&copy; 2024 YourSite.com</p>
+      <small>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+        <span>Digitally carved by <a href="https://Pensanta.com" target="_blank" rel="noopener">Pensanta.com</a></span>
+      </small>
+    </footer>
+
+  react: |
+    import './DigitallyCarved.css';
+    
+    function Footer() {
+      return (
+        <footer>
+          <p>&copy; 2024 YourSite.com</p>
+          <small className="digitally-carved">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>Digitally carved by <a href="https://Pensanta.com" target="_blank" rel="noopener">Pensanta.com</a></span>
+          </small>
+        </footer>
+      );
+    }
+
