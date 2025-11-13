@@ -18,6 +18,7 @@
     gap: var(--space-3xl);
     margin-top: var(--space-lg);
     margin-bottom: 0;
+    overflow: visible;
 }
 
 /* Portfolio Card - 2 Column Layout */
@@ -144,15 +145,42 @@
 /* Mobile Layout - Stack Vertically */
 @media (max-width: 768px) {
     .portfolio-card {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
     }
-    
+
+    .portfolio-card.flip {
+        flex-direction: column;
+    }
+
+    .portfolio-card.flip .portfolio-image,
+    .portfolio-card.flip .portfolio-content {
+        order: unset;
+    }
+
     .portfolio-image {
         min-height: 200px;
+        max-height: 300px;
+        flex-shrink: 0;
     }
-    
+
+    .portfolio-image img {
+        object-position: center top;
+    }
+
     .portfolio-content {
         padding: var(--space-lg);
+        flex-shrink: 0;
+    }
+
+    .portfolio-content h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .section-middle {
+        justify-content: flex-start;
+        overflow-y: auto;
     }
 }
 

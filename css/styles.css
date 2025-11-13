@@ -261,6 +261,8 @@ header {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 #header-container {
@@ -347,6 +349,10 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 /* Typography */
@@ -387,6 +393,8 @@ p {
 .section-top {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  z-index: 1;
 }
 
 .section-top nav {
@@ -399,8 +407,12 @@ p {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1rem;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .section-bottom {
@@ -671,6 +683,7 @@ footer small a:hover {
     rgba(255, 255, 255, 0.02) 0%, 
     transparent 50%);
   pointer-events: none;
+  z-index: 0;
 }
 
 /* Content fade-in animation with performance optimizations */
