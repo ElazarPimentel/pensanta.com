@@ -833,6 +833,24 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
     margin-right: 0; /* No margin needed when title is hidden */
   }
 
+  /* Mobile navigation fixes */
+  .section-top nav {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    min-width: auto;
+    padding: 0.4rem 0.6rem;
+    transform: skewX(-10deg);
+    font-size: var(--font-size-xs);
+  }
+
+  .nav-link span {
+    transform: skewX(10deg);
+  }
+
   /* Stack footer on small mobile */
   footer {
     flex-direction: column;
@@ -853,6 +871,24 @@ a:not(.contact-link):not(.lang-button):not(.skip-link):hover {
 
   #text-right {
     margin-right: 3rem; /* Reduce space for smaller screens */
+  }
+
+  /* Mobile navigation fixes */
+  .section-top nav {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    min-width: auto;
+    padding: 0.5rem 1rem;
+    transform: skewX(-10deg);
+    font-size: var(--font-size-sm);
+  }
+
+  .nav-link span {
+    transform: skewX(10deg);
   }
 
   .contact-links {
