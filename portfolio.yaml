@@ -79,6 +79,17 @@ projects:
     year: 2024
     image: "mochilasconlogo-com-ar-800x500.webp"
 
+  - id: licmarianodominguez
+    client: "Lic. Mariano Domínguez - Psicólogo"
+    url: "https://www.licmarianodominguez.com.ar"
+    description: "Sitio web profesional. Psicología clínica e hipnosis clínica. Contacto con potenciales clientes."
+    tech_stack:
+      - "HTML"
+      - "CSS"
+      - "JavaScript"
+    year: 2024
+    image: "licmarianodominguez-com-ar-800x500.webp"
+
   - id: mochilaseconomicas
     client: "Mochilas Económicas"
     url: "https://mochilaseconomicas.com.ar"
