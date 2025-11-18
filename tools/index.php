@@ -48,6 +48,61 @@
             margin: var(--space-lg) 0;
         }
 
+        .ip-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .ip-box {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .ip-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .ip-value {
+            font-size: var(--font-size-lg);
+            font-family: var(--font-family-mono);
+            color: var(--color-text-primary);
+            padding: var(--space-md);
+            background: var(--color-surface-elevated);
+            border: 2px solid var(--color-border-secondary);
+            border-radius: var(--radius-md);
+            text-align: center;
+            word-break: break-all;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ip-value.loading {
+            color: var(--color-text-muted);
+            font-family: var(--font-family-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        .ip-value.unavailable {
+            color: var(--color-text-muted);
+            font-family: var(--font-family-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        @media (max-width: 768px) {
+            .ip-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .password-controls {
             display: flex;
             flex-direction: column;
@@ -218,9 +273,16 @@
             <!-- IP Address Section -->
             <div class="tool-section">
                 <h2>Tu Dirección IP</h2>
-                <p>Tu dirección IP pública actual:</p>
-                <div class="ip-display">
-                    <?php echo $_SERVER['REMOTE_ADDR']; ?>
+                <p>Tus direcciones IP públicas:</p>
+                <div class="ip-grid">
+                    <div class="ip-box">
+                        <div class="ip-label">IPv4</div>
+                        <div class="ip-value loading" id="ipv4">Cargando...</div>
+                    </div>
+                    <div class="ip-box">
+                        <div class="ip-label">IPv6</div>
+                        <div class="ip-value loading" id="ipv6">Cargando...</div>
+                    </div>
                 </div>
             </div>
 
@@ -300,6 +362,41 @@
     </footer>
 
     <script>
+        // Fetch IP addresses
+        async function fetchIPAddresses() {
+            // Fetch IPv4
+            try {
+                const response4 = await fetch('https://api.ipify.org?format=json');
+                const data4 = await response4.json();
+                document.getElementById('ipv4').textContent = data4.ip;
+                document.getElementById('ipv4').classList.remove('loading');
+            } catch (error) {
+                document.getElementById('ipv4').textContent = 'No disponible';
+                document.getElementById('ipv4').classList.remove('loading');
+                document.getElementById('ipv4').classList.add('unavailable');
+            }
+
+            // Fetch IPv6
+            try {
+                const response6 = await fetch('https://api64.ipify.org?format=json');
+                const data6 = await response6.json();
+
+                // Check if it's actually IPv6
+                if (data6.ip.includes(':')) {
+                    document.getElementById('ipv6').textContent = data6.ip;
+                    document.getElementById('ipv6').classList.remove('loading');
+                } else {
+                    document.getElementById('ipv6').textContent = 'No disponible';
+                    document.getElementById('ipv6').classList.remove('loading');
+                    document.getElementById('ipv6').classList.add('unavailable');
+                }
+            } catch (error) {
+                document.getElementById('ipv6').textContent = 'No disponible';
+                document.getElementById('ipv6').classList.remove('loading');
+                document.getElementById('ipv6').classList.add('unavailable');
+            }
+        }
+
         function generatePassword() {
             const length = parseInt(document.getElementById('length').value);
             const noSala = document.getElementById('noSala').checked;
@@ -370,8 +467,11 @@
             }
         }
 
-        // Generate password on page load
-        window.addEventListener('DOMContentLoaded', generatePassword);
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchIPAddresses();
+            generatePassword();
+        });
     </script>
 </body>
 
