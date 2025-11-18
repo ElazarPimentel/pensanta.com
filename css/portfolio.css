@@ -21,6 +21,29 @@
     overflow: visible;
 }
 
+.portfolio-divider {
+    margin-top: var(--space-4xl);
+    padding: var(--space-xl);
+    border-top: 2px solid var(--color-border-primary);
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.portfolio-divider-title {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.portfolio-divider-subtitle {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
 /* Portfolio Card - 2 Column Layout */
 .portfolio-card {
     display: grid;
