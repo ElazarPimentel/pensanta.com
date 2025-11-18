@@ -274,14 +274,22 @@
             <div class="tool-section">
                 <h2>Tu Dirección IP</h2>
                 <p>Tus direcciones IP públicas:</p>
+                <?php
+                $clientIP = $_SERVER['REMOTE_ADDR'];
+                $isIPv6 = strpos($clientIP, ':') !== false;
+                ?>
                 <div class="ip-grid">
                     <div class="ip-box">
                         <div class="ip-label">IPv4</div>
-                        <div class="ip-value loading" id="ipv4">Cargando...</div>
+                        <div class="ip-value" id="ipv4">
+                            <?php echo $isIPv6 ? 'Detectando...' : htmlspecialchars($clientIP); ?>
+                        </div>
                     </div>
                     <div class="ip-box">
                         <div class="ip-label">IPv6</div>
-                        <div class="ip-value loading" id="ipv6">Cargando...</div>
+                        <div class="ip-value" id="ipv6">
+                            <?php echo $isIPv6 ? htmlspecialchars($clientIP) : 'Detectando...'; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,38 +370,42 @@
     </footer>
 
     <script>
-        // Fetch IP addresses
+        // Fetch IP addresses (enhancement - keeps PHP fallback if fails)
         async function fetchIPAddresses() {
-            // Fetch IPv4
-            try {
-                const response4 = await fetch('https://api.ipify.org?format=json');
-                const data4 = await response4.json();
-                document.getElementById('ipv4').textContent = data4.ip;
-                document.getElementById('ipv4').classList.remove('loading');
-            } catch (error) {
-                document.getElementById('ipv4').textContent = 'No disponible';
-                document.getElementById('ipv4').classList.remove('loading');
-                document.getElementById('ipv4').classList.add('unavailable');
+            const ipv4El = document.getElementById('ipv4');
+            const ipv6El = document.getElementById('ipv6');
+
+            // Only fetch IPv4 if currently showing "Detectando..."
+            if (ipv4El.textContent.trim() === 'Detectando...') {
+                try {
+                    const response4 = await fetch('https://api.ipify.org?format=json');
+                    const data4 = await response4.json();
+                    ipv4El.textContent = data4.ip;
+                } catch (error) {
+                    // Keep "Detectando..." if API fails and we have no PHP value
+                    ipv4El.textContent = 'No disponible';
+                    ipv4El.classList.add('unavailable');
+                }
             }
 
-            // Fetch IPv6
-            try {
-                const response6 = await fetch('https://api64.ipify.org?format=json');
-                const data6 = await response6.json();
+            // Only fetch IPv6 if currently showing "Detectando..."
+            if (ipv6El.textContent.trim() === 'Detectando...') {
+                try {
+                    const response6 = await fetch('https://api64.ipify.org?format=json');
+                    const data6 = await response6.json();
 
-                // Check if it's actually IPv6
-                if (data6.ip.includes(':')) {
-                    document.getElementById('ipv6').textContent = data6.ip;
-                    document.getElementById('ipv6').classList.remove('loading');
-                } else {
-                    document.getElementById('ipv6').textContent = 'No disponible';
-                    document.getElementById('ipv6').classList.remove('loading');
-                    document.getElementById('ipv6').classList.add('unavailable');
+                    // Check if it's actually IPv6
+                    if (data6.ip.includes(':')) {
+                        ipv6El.textContent = data6.ip;
+                    } else {
+                        ipv6El.textContent = 'No disponible';
+                        ipv6El.classList.add('unavailable');
+                    }
+                } catch (error) {
+                    // Keep "Detectando..." if API fails
+                    ipv6El.textContent = 'No disponible';
+                    ipv6El.classList.add('unavailable');
                 }
-            } catch (error) {
-                document.getElementById('ipv6').textContent = 'No disponible';
-                document.getElementById('ipv6').classList.remove('loading');
-                document.getElementById('ipv6').classList.add('unavailable');
             }
         }
 
