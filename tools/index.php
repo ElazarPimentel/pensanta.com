@@ -78,23 +78,27 @@
             border: 2px solid var(--color-border-secondary);
             border-radius: var(--radius-md);
             text-align: center;
-            word-break: break-all;
-            min-height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
+            cursor: text;
+            transition: all var(--transition-normal);
         }
 
-        .ip-value.loading {
-            color: var(--color-text-muted);
-            font-family: var(--font-family-primary);
-            font-size: var(--font-size-sm);
+        .ip-value:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.2);
+        }
+
+        .ip-value::selection {
+            background-color: var(--color-accent);
+            color: var(--color-background);
         }
 
         .ip-value.unavailable {
             color: var(--color-text-muted);
             font-family: var(--font-family-primary);
             font-size: var(--font-size-sm);
+            cursor: default;
         }
 
         @media (max-width: 768px) {
@@ -275,21 +279,21 @@
                 <h2>Tu Dirección IP</h2>
                 <p>Tus direcciones IP públicas:</p>
                 <?php
-                $clientIP = $_SERVER['REMOTE_ADDR'];
+                $clientIP = trim($_SERVER['REMOTE_ADDR']);
                 $isIPv6 = strpos($clientIP, ':') !== false;
                 ?>
                 <div class="ip-grid">
                     <div class="ip-box">
                         <div class="ip-label">IPv4</div>
-                        <div class="ip-value" id="ipv4">
-                            <?php echo $isIPv6 ? 'Detectando...' : htmlspecialchars($clientIP); ?>
-                        </div>
+                        <input type="text" class="ip-value" id="ipv4" readonly
+                               value="<?php echo $isIPv6 ? 'Detectando...' : htmlspecialchars($clientIP); ?>"
+                               onclick="this.select()">
                     </div>
                     <div class="ip-box">
                         <div class="ip-label">IPv6</div>
-                        <div class="ip-value" id="ipv6">
-                            <?php echo $isIPv6 ? htmlspecialchars($clientIP) : 'Detectando...'; ?>
-                        </div>
+                        <input type="text" class="ip-value" id="ipv6" readonly
+                               value="<?php echo $isIPv6 ? htmlspecialchars($clientIP) : 'Detectando...'; ?>"
+                               onclick="this.select()">
                     </div>
                 </div>
             </div>
@@ -376,34 +380,34 @@
             const ipv6El = document.getElementById('ipv6');
 
             // Only fetch IPv4 if currently showing "Detectando..."
-            if (ipv4El.textContent.trim() === 'Detectando...') {
+            if (ipv4El.value.trim() === 'Detectando...') {
                 try {
                     const response4 = await fetch('https://api.ipify.org?format=json');
                     const data4 = await response4.json();
-                    ipv4El.textContent = data4.ip;
+                    ipv4El.value = data4.ip.trim();
                 } catch (error) {
                     // Keep "Detectando..." if API fails and we have no PHP value
-                    ipv4El.textContent = 'No disponible';
+                    ipv4El.value = 'No disponible';
                     ipv4El.classList.add('unavailable');
                 }
             }
 
             // Only fetch IPv6 if currently showing "Detectando..."
-            if (ipv6El.textContent.trim() === 'Detectando...') {
+            if (ipv6El.value.trim() === 'Detectando...') {
                 try {
                     const response6 = await fetch('https://api64.ipify.org?format=json');
                     const data6 = await response6.json();
 
                     // Check if it's actually IPv6
                     if (data6.ip.includes(':')) {
-                        ipv6El.textContent = data6.ip;
+                        ipv6El.value = data6.ip.trim();
                     } else {
-                        ipv6El.textContent = 'No disponible';
+                        ipv6El.value = 'No disponible';
                         ipv6El.classList.add('unavailable');
                     }
                 } catch (error) {
                     // Keep "Detectando..." if API fails
-                    ipv6El.textContent = 'No disponible';
+                    ipv6El.value = 'No disponible';
                     ipv6El.classList.add('unavailable');
                 }
             }
