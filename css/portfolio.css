@@ -21,6 +21,29 @@
     overflow: visible;
 }
 
+.portfolio-divider {
+    margin-top: var(--space-4xl);
+    padding: var(--space-xl);
+    border-top: 2px solid var(--color-border-primary);
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.portfolio-divider-title {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.portfolio-divider-subtitle {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
 /* Portfolio Card - 2 Column Layout */
 .portfolio-card {
     display: grid;
@@ -140,6 +163,31 @@
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
     font-weight: 500;
+}
+
+.contact-panel {
+    margin-top: var(--space-3xl);
+    padding: var(--space-2xl) var(--space-xl);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface-elevated);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+}
+
+.contact-panel h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+.contact-panel .contact-intro {
+    margin: 0;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.contact-panel .contact-links {
+    margin-top: var(--space-xl);
 }
 
 /* Mobile Layout - Stack Vertically */
