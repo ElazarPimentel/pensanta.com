@@ -50,4 +50,40 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Portfolio Spanish -->
+  <url>
+    <loc>https://pensanta.com/es/portfolio/</loc>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/en/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/es/portfolio/"/>
+  </url>
+
+  <!-- Portfolio English -->
+  <url>
+    <loc>https://pensanta.com/en/portfolio/</loc>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/en/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/es/portfolio/"/>
+  </url>
+
+  <!-- Emoji Tool -->
+  <url>
+    <loc>https://pensanta.com/tools/emoji/</loc>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Borisiuk Project -->
+  <url>
+    <loc>https://pensanta.com/proyectos/borisiuk-proyecto.html</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>
