@@ -326,6 +326,10 @@
                                 <input type="checkbox" id="symbols" name="symbols" checked>
                                 <label for="symbols">Símbolos (al menos 3)</label>
                             </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="urlFriendly" name="urlFriendly">
+                                <label for="urlFriendly">URL friendly (solo A-Z, a-z, 0-9, -, _)</label>
+                            </div>
                         </div>
                     </div>
 
@@ -417,12 +421,14 @@
             const length = parseInt(document.getElementById('length').value);
             const noSala = document.getElementById('noSala').checked;
             const useSymbols = document.getElementById('symbols').checked;
+            const urlFriendly = document.getElementById('urlFriendly').checked;
 
             // Character sets
             let uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             let lowercase = 'abcdefghijklmnopqrstuvwxyz';
             let numbers = '0123456789';
             const safeSymbols = '!@#$%^&*-_=+';
+            const urlSafeSymbols = '-_';
 
             // Remove SALA characters if requested
             if (noSala) {
@@ -432,7 +438,11 @@
             }
 
             let allChars = uppercase + lowercase + numbers;
-            if (useSymbols) {
+
+            // URL friendly overrides symbols - only use URL-safe chars
+            if (urlFriendly) {
+                allChars += urlSafeSymbols;
+            } else if (useSymbols) {
                 allChars += safeSymbols;
             }
 
@@ -445,8 +455,8 @@
                 password += allChars[array[i] % allChars.length];
             }
 
-            // If symbols required, ensure at least 3 symbols
-            if (useSymbols) {
+            // If symbols required and not URL friendly, ensure at least 3 symbols
+            if (useSymbols && !urlFriendly) {
                 let symbolCount = (password.match(/[!@#$%^&*\-_=+]/g) || []).length;
 
                 while (symbolCount < 3) {
