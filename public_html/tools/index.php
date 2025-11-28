@@ -328,7 +328,7 @@
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="urlFriendly" name="urlFriendly">
-                                <label for="urlFriendly">URL friendly (solo A-Z, a-z, 0-9, -, _)</label>
+                                <label for="urlFriendly">URL friendly (A-Z, a-z, 0-9, - _ . ~)</label>
                             </div>
                         </div>
                     </div>
@@ -428,7 +428,7 @@
             let lowercase = 'abcdefghijklmnopqrstuvwxyz';
             let numbers = '0123456789';
             const safeSymbols = '!@#$%^&*-_=+';
-            const urlSafeSymbols = '-_';
+            const urlSafeSymbols = '-_.~';
 
             // Remove SALA characters if requested
             if (noSala) {
