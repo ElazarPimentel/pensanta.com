@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#000000">
-    <title>Herramientas: Generador de Contraseñas, Ver IP | Pensanta Tools</title>
-    <meta name="description" content="Herramientas gratuitas online: generador de contraseñas seguras, ver tu dirección IP pública IPv4 e IPv6. Tools profesionales para desarrollo web.">
-    <meta name="keywords" content="generador contraseñas, ver ip, dirección ip, password generator, herramientas online, tools">
+    <title>Tools: Password Generator, View IP | Pensanta Tools</title>
+    <meta name="description" content="Free online tools: secure password generator, view your public IPv4 and IPv6 address. Professional tools for web development.">
+    <meta name="keywords" content="password generator, view ip, ip address, password generator, online tools, tools">
     <meta name="author" content="Pensanta">
 
     <!-- Canonical and language alternates -->
-    <link rel="canonical" href="https://pensanta.com/tools/">
+    <link rel="canonical" href="https://pensanta.com/tools/index-eng.php">
     <link rel="alternate" hreflang="en" href="https://pensanta.com/tools/index-eng.php">
     <link rel="alternate" hreflang="es" href="https://pensanta.com/tools/">
 
@@ -249,42 +249,42 @@
 
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="container-main border-01" role="banner">
         <div id="header-container">
             <div id="logo-left">
-                <a href="/index.html" aria-label="Ir a inicio">
+                <a href="/index.html" aria-label="Go to home">
                     <h2 class="logo-text">Pensanta</h2>
                 </a>
             </div>
             <div id="text-right">
                 <p class="title-01">Tools</p>
             </div>
-            <nav class="language-switcher" role="navigation" aria-label="Selector de idioma">
-                <a href="/index-eng.html" class="lang-button" lang="en" aria-label="Cambiar a inglés">EN</a>
+            <nav class="language-switcher" role="navigation" aria-label="Language selector">
+                <a href="/tools/" class="lang-button" lang="es" aria-label="Switch to Spanish">ES</a>
             </nav>
         </div>
     </header>
 
     <main id="main-content" class="container-main border-01" role="main">
         <section class="section-top">
-            <nav role="navigation" aria-label="Navegación principal">
-                <a href="/index.html" class="nav-link"><span>Home</span></a>
-                <a href="/es/portfolio/" class="nav-link"><span>Portfolio</span></a>
-                <a href="/about.html" class="nav-link"><span>Acerca de</span></a>
-                <a href="/tools/" class="nav-link active"><span>Tools</span></a>
-                <a href="/tools/emoji/" class="nav-link"><span>Emoji</span></a>
+            <nav role="navigation" aria-label="Main navigation">
+                <a href="/index-eng.html" class="nav-link"><span>Home</span></a>
+                <a href="/en/portfolio/" class="nav-link"><span>Portfolio</span></a>
+                <a href="/about-eng.html" class="nav-link"><span>About</span></a>
+                <a href="/tools/index-eng.php" class="nav-link active"><span>Tools</span></a>
+                <a href="/tools/emoji/index-eng.php" class="nav-link"><span>Emoji</span></a>
             </nav>
         </section>
 
         <section class="section-middle">
-            <h1>Herramientas</h1>
+            <h1>Tools</h1>
 
             <!-- IP Address Section -->
             <div class="tool-section">
-                <h2>Tu Dirección IP</h2>
-                <p>Tus direcciones IP públicas:</p>
+                <h2>Your IP Address</h2>
+                <p>Your public IP addresses:</p>
                 <?php
                 $clientIP = trim($_SERVER['REMOTE_ADDR']);
                 $isIPv6 = strpos($clientIP, ':') !== false;
@@ -293,13 +293,13 @@
                     <div class="ip-box">
                         <div class="ip-label">IPv4</div>
                         <input type="text" class="ip-value" id="ipv4" readonly
-                               value="<?php echo $isIPv6 ? 'Detectando...' : htmlspecialchars($clientIP); ?>"
+                               value="<?php echo $isIPv6 ? 'Detecting...' : htmlspecialchars($clientIP); ?>"
                                onclick="this.select()">
                     </div>
                     <div class="ip-box">
                         <div class="ip-label">IPv6</div>
                         <input type="text" class="ip-value" id="ipv6" readonly
-                               value="<?php echo $isIPv6 ? htmlspecialchars($clientIP) : 'Detectando...'; ?>"
+                               value="<?php echo $isIPv6 ? htmlspecialchars($clientIP) : 'Detecting...'; ?>"
                                onclick="this.select()">
                     </div>
                 </div>
@@ -307,31 +307,31 @@
 
             <!-- Password Generator Section -->
             <div class="tool-section">
-                <h2>Generador de Contraseñas</h2>
-                <p>Genera contraseñas seguras y personalizadas.</p>
+                <h2>Password Generator</h2>
+                <p>Generate secure and customizable passwords.</p>
 
                 <div class="password-controls">
                     <div class="control-group">
-                        <label for="length">Longitud de la contraseña:</label>
+                        <label for="length">Password length:</label>
                         <select id="length" name="length">
-                            <option value="8">8 caracteres</option>
-                            <option value="12" selected>12 caracteres</option>
-                            <option value="16">16 caracteres</option>
-                            <option value="24">24 caracteres</option>
-                            <option value="32">32 caracteres</option>
+                            <option value="8">8 characters</option>
+                            <option value="12" selected>12 characters</option>
+                            <option value="16">16 characters</option>
+                            <option value="24">24 characters</option>
+                            <option value="32">32 characters</option>
                         </select>
                     </div>
 
                     <div class="control-group">
-                        <label>Opciones:</label>
+                        <label>Options:</label>
                         <div class="checkbox-group">
                             <div class="checkbox-item">
                                 <input type="checkbox" id="noSala" name="noSala" checked>
-                                <label for="noSala">No LASA (sin 0, o, 1, l, L) <small style="color: var(--color-text-muted);">Look-alike, sound-alike (LASA)</small></label>
+                                <label for="noSala">No LASA (without 0, o, 1, l, L) <small style="color: var(--color-text-muted);">Look-alike, sound-alike (LASA)</small></label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="symbols" name="symbols" checked>
-                                <label for="symbols">Símbolos (al menos 3)</label>
+                                <label for="symbols">Symbols (at least 3)</label>
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="urlFriendly" name="urlFriendly">
@@ -341,31 +341,31 @@
                     </div>
 
                     <button class="generate-btn" onclick="generatePassword()">
-                        Generar Contraseña
+                        Generate Password
                     </button>
                 </div>
 
                 <div class="password-output">
                     <div class="password-display" id="passwordDisplay">
-                        Haz clic en "Generar Contraseña"
+                        Click "Generate Password"
                     </div>
                     <button class="copy-btn" id="copyBtn" onclick="copyPassword()" disabled>
-                        Copiar
+                        Copy
                     </button>
                 </div>
             </div>
         </section>
 
         <section class="section-bottom" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" class="visually-hidden">Contacto</h2>
+            <h2 id="contact-heading" class="visually-hidden">Contact</h2>
             <div class="contact-links">
-                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Envíanos un email"
+                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Send us an email"
                     class="contact-link email-link">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span class="contact-text">Email</span>
                 </a>
                 <a href="https://wa.me/5491137990312" target="_blank" rel="noopener noreferrer"
-                    aria-label="Contáctanos por WhatsApp" class="contact-link whatsapp-link">
+                    aria-label="Contact us via WhatsApp" class="contact-link whatsapp-link">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     <span class="contact-text">WhatsApp</span>
                 </a>
@@ -374,7 +374,7 @@
     </main>
 
     <footer class="container-main border-01" role="contentinfo">
-        <p>&copy; 2024 Pensanta.com - Todos los derechos reservados.</p>
+        <p>&copy; 2024 Pensanta.com - All rights reserved.</p>
         <small>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -390,21 +390,21 @@
             const ipv4El = document.getElementById('ipv4');
             const ipv6El = document.getElementById('ipv6');
 
-            // Only fetch IPv4 if currently showing "Detectando..."
-            if (ipv4El.value.trim() === 'Detectando...') {
+            // Only fetch IPv4 if currently showing "Detecting..."
+            if (ipv4El.value.trim() === 'Detecting...') {
                 try {
                     const response4 = await fetch('https://api.ipify.org?format=json');
                     const data4 = await response4.json();
                     ipv4El.value = data4.ip.trim();
                 } catch (error) {
-                    // Keep "Detectando..." if API fails and we have no PHP value
-                    ipv4El.value = 'No disponible';
+                    // Keep "Detecting..." if API fails and we have no PHP value
+                    ipv4El.value = 'Not available';
                     ipv4El.classList.add('unavailable');
                 }
             }
 
-            // Only fetch IPv6 if currently showing "Detectando..."
-            if (ipv6El.value.trim() === 'Detectando...') {
+            // Only fetch IPv6 if currently showing "Detecting..."
+            if (ipv6El.value.trim() === 'Detecting...') {
                 try {
                     const response6 = await fetch('https://api64.ipify.org?format=json');
                     const data6 = await response6.json();
@@ -413,12 +413,12 @@
                     if (data6.ip.includes(':')) {
                         ipv6El.value = data6.ip.trim();
                     } else {
-                        ipv6El.value = 'No disponible';
+                        ipv6El.value = 'Not available';
                         ipv6El.classList.add('unavailable');
                     }
                 } catch (error) {
-                    // Keep "Detectando..." if API fails
-                    ipv6El.value = 'No disponible';
+                    // Keep "Detecting..." if API fails
+                    ipv6El.value = 'Not available';
                     ipv6El.classList.add('unavailable');
                 }
             }
@@ -478,24 +478,24 @@
             document.getElementById('passwordDisplay').textContent = password;
             document.getElementById('copyBtn').disabled = false;
             document.getElementById('copyBtn').classList.remove('copied');
-            document.getElementById('copyBtn').textContent = 'Copiar';
+            document.getElementById('copyBtn').textContent = 'Copy';
         }
 
         function copyPassword() {
             const password = document.getElementById('passwordDisplay').textContent;
 
-            if (password && password !== 'Haz clic en "Generar Contraseña"') {
+            if (password && password !== 'Click "Generate Password"') {
                 navigator.clipboard.writeText(password).then(() => {
                     const btn = document.getElementById('copyBtn');
                     btn.classList.add('copied');
-                    btn.textContent = '✓ Copiado';
+                    btn.textContent = '✓ Copied';
 
                     setTimeout(() => {
                         btn.classList.remove('copied');
-                        btn.textContent = 'Copiar';
+                        btn.textContent = 'Copy';
                     }, 2000);
                 }).catch(err => {
-                    alert('Error al copiar: ' + err);
+                    alert('Error copying: ' + err);
                 });
             }
         }

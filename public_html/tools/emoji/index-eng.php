@@ -74,19 +74,19 @@ $conn->close();
 $emojisJson = json_encode($emojis);
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#000000">
-    <title>🔍 Buscador de Emojis Gratis - 1876 Emojis para Copiar y Pegar | Emoji Picker</title>
-    <meta name="description" content="✓ Encuentra y copia emojis al instante | 1876 emojis organizados por categorías | Buscador de emojis rápido y fácil | 100% gratis sin registro | Emoji picker en español.">
-    <meta name="keywords" content="buscador de emojis, emoji buscador, emojis buscador, copiar emoji, emoji picker, emoji selector, emojis gratis, unicode emoji">
+    <title>🔍 Emoji Finder & Picker - 1876 Emojis to Copy & Paste | 100% Free</title>
+    <meta name="description" content="✓ Find and copy emojis instantly | 1876 emojis organized by categories | Fast emoji finder & picker | 100% free, no registration | Emoji search tool.">
+    <meta name="keywords" content="emoji finder, emoji picker, emoji search, emoji selector, emoji searcher, copy emoji, free emojis, unicode emoji, emojifinder">
     <meta name="author" content="Pensanta">
 
     <!-- Canonical and language alternates -->
-    <link rel="canonical" href="https://pensanta.com/tools/emoji/">
+    <link rel="canonical" href="https://pensanta.com/tools/emoji/index-eng.php">
     <link rel="alternate" hreflang="en" href="https://pensanta.com/tools/emoji/index-eng.php">
     <link rel="alternate" hreflang="es" href="https://pensanta.com/tools/emoji/">
 
@@ -268,44 +268,44 @@ $emojisJson = json_encode($emojis);
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="container-main border-01" role="banner">
         <div id="header-container">
             <div id="logo-left">
-                <a href="/index.html" aria-label="Ir a inicio">
+                <a href="/index-eng.html" aria-label="Go to home">
                     <h2 class="logo-text">Pensanta</h2>
                 </a>
             </div>
             <div id="text-right">
                 <p class="title-01">Emoji Picker</p>
             </div>
-            <nav class="language-switcher" role="navigation" aria-label="Selector de idioma">
-                <a href="/index-eng.html" class="lang-button" lang="en" aria-label="Cambiar a inglés">EN</a>
+            <nav class="language-switcher" role="navigation" aria-label="Language selector">
+                <a href="/tools/emoji/" class="lang-button" lang="es" aria-label="Switch to Spanish">ES</a>
             </nav>
         </div>
     </header>
 
     <main id="main-content" class="container-main border-01" role="main">
         <section class="section-top">
-            <nav role="navigation" aria-label="Navegación principal">
-                <a href="/index.html" class="nav-link"><span>Home</span></a>
-                <a href="/es/portfolio/" class="nav-link"><span>Portfolio</span></a>
-                <a href="/about.html" class="nav-link"><span>Acerca de</span></a>
-                <a href="/tools/" class="nav-link"><span>Tools</span></a>
-                <a href="/tools/emoji/" class="nav-link active"><span>Emoji</span></a>
+            <nav role="navigation" aria-label="Main navigation">
+                <a href="/index-eng.html" class="nav-link"><span>Home</span></a>
+                <a href="/en/portfolio/" class="nav-link"><span>Portfolio</span></a>
+                <a href="/about-eng.html" class="nav-link"><span>About</span></a>
+                <a href="/tools/index-eng.php" class="nav-link"><span>Tools</span></a>
+                <a href="/tools/emoji/index-eng.php" class="nav-link active"><span>Emoji</span></a>
             </nav>
         </section>
 
         <section class="section-middle">
             <div class="emoji-tool-container">
-                <h1>Buscador de Emojis - Busca y Copia 1876 Emojis Gratis</h1>
+                <h1>Emoji Finder - Search & Copy 1876 Emojis</h1>
 
                 <div class="search-container">
                     <input
                         type="text"
                         id="searchInput"
-                        placeholder="Busca emojis por palabra clave (ej: feliz, comida, corazón)..."
+                        placeholder="Search emojis by keyword (e.g., happy, food, heart)..."
                         autocomplete="off"
                     >
                     <div class="hashtags" id="hashtags"></div>
@@ -322,15 +322,15 @@ $emojisJson = json_encode($emojis);
         </section>
 
         <section class="section-bottom" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" class="visually-hidden">Contacto</h2>
+            <h2 id="contact-heading" class="visually-hidden">Contact</h2>
             <div class="contact-links">
-                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Envíanos un email"
+                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Send us an email"
                     class="contact-link email-link">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span class="contact-text">Email</span>
                 </a>
                 <a href="https://wa.me/5491137990312" target="_blank" rel="noopener noreferrer"
-                    aria-label="Contáctanos por WhatsApp" class="contact-link whatsapp-link">
+                    aria-label="Contact us via WhatsApp" class="contact-link whatsapp-link">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     <span class="contact-text">WhatsApp</span>
                 </a>
@@ -339,7 +339,7 @@ $emojisJson = json_encode($emojis);
     </main>
 
     <footer class="container-main border-01" role="contentinfo">
-        <p>&copy; 2024 Pensanta.com - Todos los derechos reservados.</p>
+        <p>&copy; 2024 Pensanta.com - All rights reserved.</p>
         <small>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />

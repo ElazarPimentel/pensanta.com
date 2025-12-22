@@ -1,150 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#000000" />
+        <title>
+            Pensanta - Desarrollo Web y Aplicaciones Empresariales en Buenos Aires | PMI, ART, Ciberseguridad
+        </title>
+        <meta
+            name="description"
+            content="Desarrollamos aplicaciones web y sitios corporativos en Buenos Aires, Argentina. Gestión de proyectos con metodologías PMI y ART, ciberseguridad, y capacitaciones técnicas. Equipo experto en soluciones digitales."
+        />
+        <meta name="author" content="Pensanta" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
-    <title>Pensanta - Desarrollo Web con Gestión de Proyectos | PMI, ART</title>
-    <meta name="description"
-        content="Desarrollamos aplicaciones y sitios web, gestionamos proyectos aplicando PMI y ART, y brindamos servicios de seguridad de la información y capacitaciones técnicas.">
-    <meta name="author" content="Pensanta">
+        <!-- Performance and resource hints -->
+        <link
+            rel="preconnect"
+            href="https://cdnjs.cloudflare.com"
+            crossorigin
+        />
+        <link rel="dns-prefetch" href="https://wa.me" />
 
-    <!-- Performance and resource hints -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://wa.me">
+        <!-- Canonical and language alternates -->
+        <link rel="canonical" href="https://pensanta.com/" />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://pensanta.com/index-eng.html"
+        />
+        <link rel="alternate" hreflang="es" href="https://pensanta.com/" />
 
-    <!-- Canonical and language alternates -->
-    <link rel="canonical" href="https://pensanta.com/">
-    <link rel="alternate" hreflang="en" href="https://pensanta.com/index-eng.html">
-    <link rel="alternate" hreflang="es" href="https://pensanta.com/">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/img/logo-negro-02-medium.webp" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/img/logo-negro-02-medium.jpeg">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pensanta.com/" />
+        <meta
+            property="og:title"
+            content="Pensanta - Desarrollo Web y Aplicaciones Empresariales en Buenos Aires"
+        />
+        <meta
+            property="og:description"
+            content="Desarrollamos aplicaciones web y sitios corporativos en Buenos Aires, Argentina. Gestión de proyectos con PMI y ART, ciberseguridad y capacitaciones técnicas."
+        />
+        <meta
+            property="og:image"
+            content="https://pensanta.com/img/logo-negro-03-face.webp"
+        />
+        <meta property="og:locale" content="es_AR" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pensanta.com/">
-    <meta property="og:title" content="Pensanta - Desarrollo Web con Gestión de Proyectos">
-    <meta property="og:description"
-        content="Desarrollamos aplicaciones y sitios web, gestionamos proyectos aplicando PMI y ART, y brindamos servicios de seguridad de la información.">
-    <meta property="og:image" content="https://pensanta.com/img/logo-negro-03-face.jpeg">
-    <meta property="og:locale" content="es_AR">
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://pensanta.com/" />
+        <meta
+            property="twitter:title"
+            content="Pensanta - Desarrollo Web y Aplicaciones Empresariales en Buenos Aires"
+        />
+        <meta
+            property="twitter:description"
+            content="Desarrollamos aplicaciones web y sitios corporativos en Buenos Aires, Argentina. Gestión de proyectos con PMI y ART, ciberseguridad y capacitaciones técnicas."
+        />
+        <meta
+            property="twitter:image"
+            content="https://pensanta.com/img/logo-negro-03-face.webp"
+        />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://pensanta.com/">
-    <meta property="twitter:title" content="Pensanta - Desarrollo Web con Gestión de Proyectos">
-    <meta property="twitter:description"
-        content="Desarrollamos aplicaciones y sitios web, gestionamos proyectos aplicando PMI y ART, y brindamos servicios de seguridad de la información.">
-    <meta property="twitter:image" content="https://pensanta.com/img/logo-negro-03-face.jpeg">
+        <!-- Optimized CSS loading -->
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+            rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            />
+        </noscript>
 
-    <!-- Optimized CSS loading -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </noscript>
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "Pensanta",
+                "url": "https://pensanta.com",
+                "logo": "https://pensanta.com/img/logo-negro-04-big.webp",
+                "email": "elazar.pimentel@pensanta.com",
+                "telephone": "+54-911-3799-0312",
+                "description": "Consultora de desarrollo web, aplicaciones empresariales, gestión de proyectos PMI y ART, y ciberseguridad en Buenos Aires, Argentina",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Buenos Aires",
+                    "addressCountry": "AR",
+                    "addressRegion": "Buenos Aires"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Argentina"
+                },
+                "priceRange": "$$",
+                "serviceType": ["Desarrollo Web", "Desarrollo de Aplicaciones", "Gestión de Proyectos", "Ciberseguridad", "Capacitaciones Técnicas"]
+            }
+        </script>
+    </head>
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Pensanta",
-      "url": "https://pensanta.com",
-      "logo": "https://pensanta.com/img/logo-negro-04-big.jpeg",
-      "email": "elazar.pimentel@pensanta.com",
-      "description": "Desarrollo web con gestión de proyectos aplicando metodologías PMI y ART",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "AR"
-      }
-    }
-    </script>
-</head>
+    <body>
+        <!-- Skip to main content for accessibility -->
+        <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-<body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
-
-    <header class="container-main border-01" role="banner">
-        <div id="header-container">
-            <div id="logo-left">
-                <a href="index.html" aria-label="Ir a inicio">
-                    <h2 class="logo-text">Pensanta</h2>
-                </a>
+        <header class="container-main border-01" role="banner">
+            <div id="header-container">
+                <div id="logo-left">
+                    <a href="index.html" aria-label="Ir a inicio">
+                        <h2 class="logo-text">Pensanta</h2>
+                    </a>
+                </div>
+                <div id="text-right">
+                    <p class="title-01">
+                        Program, Project and Digital Product Management
+                    </p>
+                </div>
+                <nav
+                    class="language-switcher"
+                    role="navigation"
+                    aria-label="Selector de idioma"
+                >
+                    <a
+                        href="index-eng.html"
+                        class="lang-button"
+                        lang="en"
+                        aria-label="Cambiar a inglés"
+                        >EN</a
+                    >
+                </nav>
             </div>
-            <div id="text-right">
-                <p class="title-01">Program, Project and Digital Product Management</p>
-            </div>
-            <nav class="language-switcher" role="navigation" aria-label="Selector de idioma">
-                <a href="index-eng.html" class="lang-button" lang="en" aria-label="Cambiar a inglés">EN</a>
-            </nav>
-        </div>
-    </header>
-    <main id="main-content" class="container-main border-01" role="main">
-        <section class="section-top">
-            <nav role="navigation" aria-label="Navegación principal">
-                <a href="index.html" class="nav-link active"><span>Home</span></a>
-                <a href="es/portfolio/" class="nav-link"><span>Portfolio</span></a>
-                <a href="tools/" class="nav-link"><span>Herramientas</span></a>
-                <a href="about.html" class="nav-link"><span>Acerca de</span></a>
-            </nav>
-        </section>
+        </header>
+        <main id="main-content" class="container-main border-01" role="main">
+            <section class="section-top">
+                <nav role="navigation" aria-label="Navegación principal">
+                    <a href="index.html" class="nav-link active"
+                        ><span>Home</span></a
+                    >
+                    <a href="es/portfolio/" class="nav-link"
+                        ><span>Portfolio</span></a
+                    >
+                    <a href="tools/" class="nav-link"
+                        ><span>Herramientas</span></a
+                    >
+                    <a href="about.html" class="nav-link"
+                        ><span>Acerca de</span></a
+                    >
+                </nav>
+            </section>
 
-        <section class="section-middle">
-            <h1>Creamos Aplicaciones, Sitios Web y Seguridad de la Información</h1>
-            <p>En Pensanta desarrollamos aplicaciones y sitios web, gestionamos proyectos y brindamos servicios de seguridad de la información. Combinamos experiencia técnica con metodologías probadas para entregar resultados concretos.</p>
+            <section class="section-middle">
+                <h1>
+                    Desarrollo Web, Aplicaciones Empresariales y Ciberseguridad en Buenos Aires, Argentina
+                </h1>
+                <p>
+                    En Pensanta, consultora con base en Buenos Aires, desarrollamos aplicaciones web empresariales, sitios corporativos profesionales, gestionamos proyectos con metodologías PMI y ART, y brindamos servicios de ciberseguridad y capacitaciones técnicas. Combinamos experiencia técnica con metodologías probadas para entregar soluciones digitales concretas.
+                </p>
 
-            <h2>Qué Hacemos</h2>
+                <h2>Qué Hacemos</h2>
 
-            <h3>Aplicaciones Web</h3>
-            <p>Desarrollamos aplicaciones web escalables y mantenibles, desde sistemas internos hasta plataformas empresariales. Aplicamos metodologías de gestión de proyectos para asegurar entregas dentro del alcance, presupuesto y tiempo acordados.</p>
+                <h3>Aplicaciones Web</h3>
+                <p>
+                    Desarrollamos aplicaciones web escalables y mantenibles,
+                    desde sistemas internos hasta plataformas empresariales.
+                    Aplicamos metodologías de gestión de proyectos para asegurar
+                    entregas dentro del alcance, presupuesto y tiempo acordados.
+                </p>
 
-            <h3>Sitios Web</h3>
-            <p>Diseñamos y construimos sitios web profesionales, optimizados y adaptados a las necesidades de tu negocio. Desde sitios corporativos hasta plataformas con funcionalidades avanzadas.</p>
+                <h3>Sitios Web</h3>
+                <p>
+                    Diseñamos y construimos sitios web profesionales,
+                    optimizados y adaptados a las necesidades de tu negocio.
+                    Desde sitios corporativos hasta plataformas con
+                    funcionalidades avanzadas.
+                </p>
 
-            <h3>Seguridad de la Información</h3>
-            <p>Cuando las empresas enfrentan incidentes de seguridad o necesitan fortalecer sus defensas, intervenimos rápidamente. Lideramos la recuperación forense, fortalecemos las defensas y capacitamos a los equipos para prevenir futuros incidentes.</p>
+                <h3>Seguridad de la Información</h3>
+                <p>
+                    Cuando las empresas enfrentan incidentes de seguridad o
+                    necesitan fortalecer sus defensas, intervenimos rápidamente.
+                    Lideramos la recuperación forense, fortalecemos las defensas
+                    y capacitamos a los equipos para prevenir futuros
+                    incidentes.
+                </p>
 
-            <h3>Capacitaciones</h3>
-            <p>Capacitamos equipos en Seguridad de la Información, uso eficiente de herramientas tecnológicas y aplicación práctica de herramientas de AI para tareas cotidianas de oficina: optimización de Excel, redacción de documentos, automatización de procesos administrativos y otras actividades del día a día.</p>
+                <h3>Capacitaciones</h3>
+                <p>
+                    Capacitamos equipos en Seguridad de la Información, uso
+                    eficiente de herramientas tecnológicas y aplicación práctica
+                    de herramientas de AI para tareas cotidianas de oficina:
+                    optimización de Excel, redacción de documentos,
+                    automatización de procesos administrativos y otras
+                    actividades del día a día.
+                </p>
 
-            <h3>Nuestro Enfoque</h3>
-            <p>Aplicamos metodologías de gestión de proyectos según el tipo de iniciativa: PMI para proyectos tradicionales y ART (Agile Release Train) para iniciativas ágiles escaladas. Nuestra experiencia abarca desarrollo de software, seguridad, infraestructura y capacitación técnica, permitiéndonos entregar resultados reales y medibles.</p>
-        </section>
+                <h3>Nuestro Enfoque</h3>
+                <p>
+                    Aplicamos metodologías de gestión de proyectos según el tipo
+                    de iniciativa: PMI para proyectos tradicionales y ART (Agile
+                    Release Train) para iniciativas ágiles escaladas. Nuestra
+                    experiencia abarca desarrollo de software, seguridad,
+                    infraestructura y capacitación técnica, permitiéndonos
+                    entregar resultados reales y medibles.
+                </p>
+            </section>
 
-        <section class="section-bottom" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" class="visually-hidden">Contacto</h2>
-            <div class="contact-links">
-                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Envíanos un email"
-                    class="contact-link email-link">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <span class="contact-text">Email</span>
-                </a>
-                <a href="https://wa.me/5491137990312" target="_blank" rel="noopener noreferrer"
-                    aria-label="Contáctanos por WhatsApp" class="contact-link whatsapp-link">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    <span class="contact-text">WhatsApp</span>
-                </a>
-            </div>
-        </section>
-    </main>
-    <footer class="container-main border-01" role="contentinfo">
-        <p>&copy; 2024 Pensanta.com - Todos los derechos reservados.</p>
-        <small>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            <span>Digitally carved by <a href="https://elazarpimentel.com" target="_blank" aria-label="Visit Elazar Pimentel's website">ElazarPimentel.com</a></span>
-        </small>
-    </footer>
-</body>
-
+            <section class="section-bottom" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="visually-hidden">Contacto</h2>
+                <div class="contact-links">
+                    <a
+                        href="mailto:elazar.pimentel@pensanta.com"
+                        aria-label="Envíanos un email"
+                        class="contact-link email-link"
+                    >
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="contact-text">Email</span>
+                    </a>
+                    <a
+                        href="https://wa.me/5491137990312"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Contáctanos por WhatsApp"
+                        class="contact-link whatsapp-link"
+                    >
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span class="contact-text">WhatsApp</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+        <footer class="container-main border-01" role="contentinfo">
+            <p>&copy; 2024 Pensanta.com - Todos los derechos reservados.</p>
+            <small>
+                <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                >
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                <span
+                    >Digitally carved by
+                    <a
+                        href="https://elazarpimentel.com"
+                        target="_blank"
+                        aria-label="Visit Elazar Pimentel's website"
+                        >ElazarPimentel.com</a
+                    ></span
+                >
+            </small>
+        </footer>
+    </body>
 </html>

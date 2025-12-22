@@ -5,55 +5,67 @@
   <!-- Homepage Spanish -->
   <url>
     <loc>https://pensanta.com/</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/index-eng.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/"/>
   </url>
-  
+
   <!-- Homepage English -->
   <url>
     <loc>https://pensanta.com/index-eng.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/index-eng.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/"/>
   </url>
-  
+
   <!-- About Spanish -->
   <url>
     <loc>https://pensanta.com/about.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/about-eng.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/about.html"/>
   </url>
-  
+
   <!-- About English -->
   <url>
     <loc>https://pensanta.com/about-eng.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/about-eng.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/about.html"/>
   </url>
-  
+
   <!-- Tools Spanish -->
   <url>
-    <loc>https://pensanta.com/tools.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <loc>https://pensanta.com/tools/</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/tools/index-eng.php"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/tools/"/>
+  </url>
+
+  <!-- Tools English -->
+  <url>
+    <loc>https://pensanta.com/tools/index-eng.php</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/tools/index-eng.php"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/tools/"/>
   </url>
 
   <!-- Portfolio Spanish -->
   <url>
     <loc>https://pensanta.com/es/portfolio/</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/en/portfolio/"/>
@@ -63,27 +75,31 @@
   <!-- Portfolio English -->
   <url>
     <loc>https://pensanta.com/en/portfolio/</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/en/portfolio/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/es/portfolio/"/>
   </url>
 
-  <!-- Emoji Tool -->
+  <!-- Emoji Tool Spanish -->
   <url>
     <loc>https://pensanta.com/tools/emoji/</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/tools/emoji/index-eng.php"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/tools/emoji/"/>
   </url>
 
-  <!-- Borisiuk Project -->
+  <!-- Emoji Tool English -->
   <url>
-    <loc>https://pensanta.com/proyectos/borisiuk-proyecto.html</loc>
-    <lastmod>2025-11-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://pensanta.com/tools/emoji/index-eng.php</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pensanta.com/tools/emoji/index-eng.php"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pensanta.com/tools/emoji/"/>
   </url>
 
 </urlset>

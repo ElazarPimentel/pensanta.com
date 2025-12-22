@@ -1,0 +1,859 @@
+{
+  "site_url": "sc-domain:pensanta.com",
+  "generated_at": "2025-12-22T00:43:59.316677",
+  "period": {
+    "start": "2025-11-24",
+    "end": "2025-12-22",
+    "days": 28
+  },
+  "data": {
+    "queries_28d": [
+      {
+        "keys": [
+          "picker emoji"
+        ],
+        "clicks": 3,
+        "impressions": 3,
+        "ctr": 1,
+        "position": 11.7
+      },
+      {
+        "keys": [
+          "ayudem"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 5.1
+      },
+      {
+        "keys": [
+          "buscador de emojis"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "buscador emojis"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "keys": [
+          "emoji buscador"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "keys": [
+          "emoji finder"
+        ],
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "keys": [
+          "emoji locator"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 77
+      },
+      {
+        "keys": [
+          "emoji search"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "keys": [
+          "emoji searcher"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 67.7
+      },
+      {
+        "keys": [
+          "emoji selector"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 76
+      },
+      {
+        "keys": [
+          "emojifinder"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 31.3
+      },
+      {
+        "keys": [
+          "emojis buscador"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.3
+      },
+      {
+        "keys": [
+          "emojis finder"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 69
+      },
+      {
+        "keys": [
+          "emoticon finder"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 81
+      },
+      {
+        "keys": [
+          "pensanta"
+        ],
+        "clicks": 0,
+        "impressions": 23,
+        "ctr": 0,
+        "position": 8.6
+      },
+      {
+        "keys": [
+          "pensenta"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
+      }
+    ],
+    "pages_28d": [
+      {
+        "keys": [
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 3,
+        "impressions": 52,
+        "ctr": 0.0577,
+        "position": 10.7
+      },
+      {
+        "keys": [
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 1,
+        "impressions": 44,
+        "ctr": 0.0227,
+        "position": 41.8
+      },
+      {
+        "keys": [
+          "https://ayudem.pensanta.com/"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 4.8
+      },
+      {
+        "keys": [
+          "https://pensanta.com/"
+        ],
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0,
+        "position": 1.8
+      },
+      {
+        "keys": [
+          "https://pensanta.com/about-eng.html"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "https://pensanta.com/about.html"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 12.7
+      },
+      {
+        "keys": [
+          "https://pensanta.com/index-eng.html"
+        ],
+        "clicks": 0,
+        "impressions": 20,
+        "ctr": 0,
+        "position": 2.7
+      }
+    ],
+    "devices_28d": [
+      {
+        "keys": [
+          "MOBILE"
+        ],
+        "clicks": 3,
+        "impressions": 50,
+        "ctr": 0.06,
+        "position": 5.4
+      },
+      {
+        "keys": [
+          "TABLET"
+        ],
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 0.5,
+        "position": 44
+      },
+      {
+        "keys": [
+          "DESKTOP"
+        ],
+        "clicks": 0,
+        "impressions": 91,
+        "ctr": 0,
+        "position": 25.3
+      }
+    ],
+    "countries_28d": [
+      {
+        "keys": [
+          "col"
+        ],
+        "clicks": 3,
+        "impressions": 9,
+        "ctr": 0.3333,
+        "position": 6.9
+      },
+      {
+        "keys": [
+          "usa"
+        ],
+        "clicks": 1,
+        "impressions": 12,
+        "ctr": 0.0833,
+        "position": 19.3
+      },
+      {
+        "keys": [
+          "arg"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "aut"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "bhr"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "bol"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "bra"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 3.5
+      },
+      {
+        "keys": [
+          "can"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 48
+      },
+      {
+        "keys": [
+          "che"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "keys": [
+          "chl"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "deu"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 75
+      },
+      {
+        "keys": [
+          "dnk"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 76
+      },
+      {
+        "keys": [
+          "ecu"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 5.8
+      },
+      {
+        "keys": [
+          "egy"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "esp"
+        ],
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 20.4
+      },
+      {
+        "keys": [
+          "fra"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 47.2
+      },
+      {
+        "keys": [
+          "gbr"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 25.7
+      },
+      {
+        "keys": [
+          "hnd"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "hun"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 69
+      },
+      {
+        "keys": [
+          "idn"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.6
+      }
+    ],
+    "daily_28d": [
+      {
+        "keys": [
+          "2025-11-24"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "2025-11-27"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2.2
+      },
+      {
+        "keys": [
+          "2025-11-28"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "keys": [
+          "2025-11-29"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "2025-12-01"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "2025-12-02"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "2025-12-03"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 4.5
+      },
+      {
+        "keys": [
+          "2025-12-04"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "2025-12-05"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 11.1
+      },
+      {
+        "keys": [
+          "2025-12-06"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 16
+      },
+      {
+        "keys": [
+          "2025-12-07"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 29.1
+      },
+      {
+        "keys": [
+          "2025-12-08"
+        ],
+        "clicks": 1,
+        "impressions": 12,
+        "ctr": 0.0833,
+        "position": 27.2
+      },
+      {
+        "keys": [
+          "2025-12-09"
+        ],
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "keys": [
+          "2025-12-10"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 26.8
+      },
+      {
+        "keys": [
+          "2025-12-11"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 15.6
+      },
+      {
+        "keys": [
+          "2025-12-12"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 31.3
+      },
+      {
+        "keys": [
+          "2025-12-13"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 38.2
+      },
+      {
+        "keys": [
+          "2025-12-14"
+        ],
+        "clicks": 3,
+        "impressions": 7,
+        "ctr": 0.4286,
+        "position": 8.7
+      },
+      {
+        "keys": [
+          "2025-12-15"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 27.2
+      },
+      {
+        "keys": [
+          "2025-12-16"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.6
+      },
+      {
+        "keys": [
+          "2025-12-17"
+        ],
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 13.3
+      },
+      {
+        "keys": [
+          "2025-12-18"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 29.8
+      },
+      {
+        "keys": [
+          "2025-12-19"
+        ],
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 18.2
+      }
+    ],
+    "query_page_28d": [
+      {
+        "keys": [
+          "picker emoji",
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 3,
+        "impressions": 3,
+        "ctr": 1,
+        "position": 11.7
+      },
+      {
+        "keys": [
+          "ayudem",
+          "https://ayudem.pensanta.com/"
+        ],
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 5.1
+      },
+      {
+        "keys": [
+          "buscador de emojis",
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "buscador emojis",
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "keys": [
+          "emoji buscador",
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "keys": [
+          "emoji finder",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "keys": [
+          "emoji locator",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 77
+      },
+      {
+        "keys": [
+          "emoji search",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "keys": [
+          "emoji searcher",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 67.7
+      },
+      {
+        "keys": [
+          "emoji selector",
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 76
+      },
+      {
+        "keys": [
+          "emojifinder",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 31.3
+      },
+      {
+        "keys": [
+          "emojis buscador",
+          "https://pensanta.com/tools/emoji/"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.3
+      },
+      {
+        "keys": [
+          "emojis finder",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 69
+      },
+      {
+        "keys": [
+          "emoticon finder",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 81
+      },
+      {
+        "keys": [
+          "pensanta",
+          "https://ayudem.pensanta.com/"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "pensanta",
+          "https://pensanta.com/"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 1.8
+      },
+      {
+        "keys": [
+          "pensanta",
+          "https://pensanta.com/about.html"
+        ],
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 15.4
+      },
+      {
+        "keys": [
+          "pensanta",
+          "https://pensanta.com/index-eng.html"
+        ],
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 1.5
+      },
+      {
+        "keys": [
+          "pensanta",
+          "https://pensanta.com/tools/emoji/index-eng.php"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 15.5
+      },
+      {
+        "keys": [
+          "pensenta",
+          "https://pensanta.com/"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
+      }
+    ]
+  },
+  "summary": {
+    "total_clicks_28d": 3,
+    "total_impressions_28d": 101,
+    "average_ctr_28d": 2.9702970297029703,
+    "total_queries": 16,
+    "total_pages": 7
+  },
+  "warnings": [
+    {
+      "type": "GUESSED_FOLDER_MAPPING",
+      "message": "TODO: Add site URL to package.json \"homepage\" field or .env SITE_URL variable to confirm correct folder mapping",
+      "expected_url": "sc-domain:pensanta.com",
+      "folder_path": "/home/rob/Documents/work/pensanta/websites/pensanta-com"
+    }
+  ]
+}
