@@ -354,6 +354,38 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Text Cleaner Section -->
+            <div class="tool-section">
+                <h2>Limpiador de Texto</h2>
+                <p>Elimina caracteres de formato: * # ` y reemplaza — por -</p>
+
+                <div class="password-controls">
+                    <div class="control-group">
+                        <label for="textInput">Texto (máx. 2000 caracteres):</label>
+                        <textarea id="textInput" maxlength="2000" rows="6"
+                            style="width:100%; padding:var(--space-md); background:var(--color-surface-elevated);
+                            color:var(--color-text-primary); border:2px solid var(--color-border-primary);
+                            border-radius:var(--radius-md); font-family:var(--font-family-primary);
+                            font-size:var(--font-size-base); resize:vertical;"
+                            placeholder="Pega tu texto aquí..."></textarea>
+                        <small id="charCount" style="color:var(--color-text-muted);">0 / 2000</small>
+                    </div>
+
+                    <button class="generate-btn" onclick="cleanText()">
+                        Limpiar Texto
+                    </button>
+                </div>
+
+                <div class="password-output">
+                    <div class="password-display" id="cleanedText" style="white-space:pre-wrap;">
+                        El texto limpio aparecerá aquí
+                    </div>
+                    <button class="copy-btn" id="copyCleanBtn" onclick="copyCleanedText()" disabled>
+                        Copiar
+                    </button>
+                </div>
+            </div>
         </section>
 
         <section class="section-bottom" aria-labelledby="contact-heading">
@@ -500,10 +532,47 @@
             }
         }
 
+        // Text Cleaner functions
+        function cleanText() {
+            const input = document.getElementById('textInput').value;
+            let cleaned = input
+                .replace(/[*#`]/g, '')
+                .replace(/—/g, '-');
+
+            document.getElementById('cleanedText').textContent = cleaned;
+            document.getElementById('copyCleanBtn').disabled = false;
+            document.getElementById('copyCleanBtn').classList.remove('copied');
+            document.getElementById('copyCleanBtn').textContent = 'Copiar';
+        }
+
+        function copyCleanedText() {
+            const text = document.getElementById('cleanedText').textContent;
+
+            if (text && text !== 'El texto limpio aparecerá aquí') {
+                navigator.clipboard.writeText(text).then(() => {
+                    const btn = document.getElementById('copyCleanBtn');
+                    btn.classList.add('copied');
+                    btn.textContent = '✓ Copiado';
+
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                        btn.textContent = 'Copiar';
+                    }, 2000);
+                }).catch(err => {
+                    alert('Error al copiar: ' + err);
+                });
+            }
+        }
+
         // Initialize on page load
         window.addEventListener('DOMContentLoaded', () => {
             fetchIPAddresses();
             generatePassword();
+
+            // Character counter for text cleaner
+            document.getElementById('textInput').addEventListener('input', function() {
+                document.getElementById('charCount').textContent = this.value.length + ' / 2000';
+            });
         });
     </script>
 </body>
