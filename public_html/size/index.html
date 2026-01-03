@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+    <title>Tamaño de Pantalla | Pensanta Tools</title>
+    <meta name="description" content="Herramienta para ver el tamaño de pantalla y viewport de tu dispositivo en tiempo real. Útil para verificar breakpoints de diseño responsive.">
+    <meta name="author" content="Pensanta">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://pensanta.com/size/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+    <style>
+        .tool-section {
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--radius-lg);
+        }
+
+        .tool-section h2 {
+            margin-top: 0;
+            color: var(--color-accent);
+        }
+
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .size-card {
+            padding: var(--space-xl);
+            background: var(--color-surface-elevated);
+            border: 1px solid var(--color-border-secondary);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .size-card h3 {
+            margin: 0 0 var(--space-md);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .size-value {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .size-meta {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+            margin-top: var(--space-sm);
+        }
+
+        .size-note {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-top: var(--space-lg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <header class="container-main border-01" role="banner">
+        <div id="header-container">
+            <div id="logo-left">
+                <a href="/index.html" aria-label="Ir a inicio">
+                    <h2 class="logo-text">Pensanta</h2>
+                </a>
+            </div>
+            <div id="text-right">
+                <p class="title-01">Screen Size</p>
+            </div>
+            <nav class="language-switcher" role="navigation" aria-label="Selector de idioma">
+                <a href="/index-eng.html" class="lang-button" lang="en" aria-label="Cambiar a inglés">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container-main border-01" role="main">
+        <section class="section-top">
+            <nav role="navigation" aria-label="Navegación principal">
+                <a href="/index.html" class="nav-link"><span>Home</span></a>
+                <a href="/es/portfolio/" class="nav-link"><span>Portfolio</span></a>
+                <a href="/about.html" class="nav-link"><span>Acerca de</span></a>
+                <a href="/tools/" class="nav-link"><span>Tools</span></a>
+                <a href="/size/" class="nav-link active"><span>Screen Size</span></a>
+            </nav>
+        </section>
+
+        <section class="section-middle">
+            <h1>Tamaño de Pantalla</h1>
+
+            <div class="tool-section">
+                <h2>Dimensiones del Dispositivo</h2>
+                <p>Los valores se actualizan en tiempo real. Rota tu teléfono o redimensiona el navegador para ver los cambios.</p>
+
+                <div class="size-grid">
+                    <article class="size-card">
+                        <h3>Viewport (CSS px)</h3>
+                        <div class="size-value" id="viewport-size">--</div>
+                        <div class="size-meta">window.innerWidth × innerHeight</div>
+                    </article>
+                    <article class="size-card">
+                        <h3>Screen (Device px)</h3>
+                        <div class="size-value" id="screen-size">--</div>
+                        <div class="size-meta">screen.width × height<br>(monitor principal)</div>
+                    </article>
+                    <article class="size-card">
+                        <h3>Pixel Ratio</h3>
+                        <div class="size-value" id="pixel-ratio">--</div>
+                        <div class="size-meta">devicePixelRatio</div>
+                    </article>
+                </div>
+
+                <p class="size-note">El viewport es el tamaño útil para diseño responsive. El screen siempre reporta el monitor principal.</p>
+            </div>
+        </section>
+
+        <section class="section-bottom" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="visually-hidden">Contacto</h2>
+            <div class="contact-links">
+                <a href="mailto:elazar.pimentel@pensanta.com" aria-label="Envíanos un email"
+                    class="contact-link email-link">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span class="contact-text">Email</span>
+                </a>
+                <a href="https://wa.me/5491137990312" target="_blank" rel="noopener noreferrer"
+                    aria-label="Contáctanos por WhatsApp" class="contact-link whatsapp-link">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span class="contact-text">WhatsApp</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container-main border-01" role="contentinfo">
+        <p>&copy; 2024 Pensanta.com - Todos los derechos reservados.</p>
+        <small>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>Digitally carved by <a href="https://elazarpimentel.com" target="_blank" aria-label="Visit Elazar Pimentel's website">ElazarPimentel.com</a></span>
+        </small>
+    </footer>
+
+    <script>
+        const viewportEl = document.getElementById('viewport-size');
+        const screenEl = document.getElementById('screen-size');
+        const ratioEl = document.getElementById('pixel-ratio');
+
+        const formatSize = (w, h) => `${Math.round(w)} × ${Math.round(h)}`;
+
+        function updateSizes() {
+            viewportEl.textContent = formatSize(window.innerWidth, window.innerHeight);
+            screenEl.textContent = formatSize(window.screen.width, window.screen.height);
+            ratioEl.textContent = window.devicePixelRatio.toFixed(2);
+        }
+
+        window.addEventListener('resize', updateSizes);
+        window.addEventListener('orientationchange', updateSizes);
+        window.addEventListener('DOMContentLoaded', updateSizes);
+        updateSizes();
+    </script>
+</body>
+
+</html>

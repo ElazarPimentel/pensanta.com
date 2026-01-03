@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebSearch",
+      "Bash(./setTitle.sh:*)",
+      "Bash(git rm:*)",
+      "Bash(cp:*)",
+      "Bash(pnpm exec purgecss:*)",
+      "Bash(pnpm exec postcss:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm list:*)",
+      "Bash(node:*)",
+      "Read(//home/rob/Documents/terminal/sh/**)",
+      "WebFetch(domain:pensanta.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

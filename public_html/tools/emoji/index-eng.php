@@ -96,6 +96,39 @@ $emojisJson = json_encode($emojis);
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free Emoji Finder & Picker",
+        "alternateName": "Emoji Picker",
+        "description": "Find and copy emojis instantly. 1876 emojis organized by categories. Fast emoji finder and picker. 100% free, no registration required.",
+        "url": "https://pensanta.com/tools/emoji/index-eng.php",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Pensanta",
+            "url": "https://pensanta.com"
+        },
+        "inLanguage": ["en", "es"],
+        "featureList": [
+            "1876 emojis available",
+            "Keyword search",
+            "Category filtering",
+            "One-click copy",
+            "Recently used emojis",
+            "No registration required"
+        ]
+    }
+    </script>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -255,6 +288,63 @@ $emojisJson = json_encode($emojis);
             font-size: var(--font-size-lg);
         }
 
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .category-btn {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-primary);
+            color: var(--color-text-secondary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            transition: all 0.2s;
+        }
+
+        .category-btn:hover {
+            background: var(--color-surface-elevated);
+            border-color: var(--color-accent);
+        }
+
+        .category-btn.active {
+            background: var(--color-accent);
+            color: var(--color-background);
+            border-color: var(--color-accent);
+        }
+
+        .recently-copied {
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--radius-md);
+        }
+
+        .recently-copied h3 {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin: 0 0 var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .recently-copied-grid {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .recently-copied .emoji-btn {
+            width: 48px;
+            height: 48px;
+            font-size: 1.5rem;
+        }
+
         @media (max-width: 768px) {
             .emoji-grid {
                 grid-template-columns: repeat(4, 1fr);
@@ -311,6 +401,13 @@ $emojisJson = json_encode($emojis);
                     <div class="hashtags" id="hashtags"></div>
                 </div>
 
+                <div class="category-filters" id="categoryFilters"></div>
+
+                <div class="recently-copied" id="recentlySection" style="display: none;">
+                    <h3>🕐 Recently Copied</h3>
+                    <div class="recently-copied-grid" id="recentlyGrid"></div>
+                </div>
+
                 <div class="emoji-grid" id="emojiGrid"></div>
 
                 <div class="pagination">
@@ -354,10 +451,71 @@ $emojisJson = json_encode($emojis);
     <script>
         const allEmojis = <?= $emojisJson ?>;
         const EMOJIS_PER_PAGE = 36; // 6x6 grid
+        const MAX_RECENT = 12;
 
         let currentPage = 1;
         let filteredEmojis = allEmojis;
         let activeKeywords = [];
+        let activeCategory = null;
+        let recentlyUsed = JSON.parse(localStorage.getItem('recentEmojis') || '[]');
+
+        // Extract unique categories
+        const categories = [...new Set(allEmojis.map(e => e.category))].sort();
+
+        // Category emoji icons
+        const categoryIcons = {
+            'Smileys & Emotion': '😊',
+            'People & Body': '👋',
+            'Animals & Nature': '🐱',
+            'Food & Drink': '🍕',
+            'Travel & Places': '✈️',
+            'Activities': '⚽',
+            'Objects': '💡',
+            'Symbols': '❤️',
+            'Flags': '🏳️'
+        };
+
+        function renderCategories() {
+            const container = document.getElementById('categoryFilters');
+            const allBtn = `<button class="category-btn ${activeCategory === null ? 'active' : ''}" onclick="filterByCategory(null)">All</button>`;
+            const catBtns = categories.map(cat => {
+                const icon = categoryIcons[cat] || '📁';
+                const isActive = activeCategory === cat ? 'active' : '';
+                return `<button class="category-btn ${isActive}" onclick="filterByCategory('${cat}')">${icon} ${cat}</button>`;
+            }).join('');
+            container.innerHTML = allBtn + catBtns;
+        }
+
+        function filterByCategory(category) {
+            activeCategory = category;
+            renderCategories();
+            filterEmojis();
+        }
+
+        function renderRecentlyUsed() {
+            const section = document.getElementById('recentlySection');
+            const grid = document.getElementById('recentlyGrid');
+
+            if (recentlyUsed.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+
+            section.style.display = 'block';
+            grid.innerHTML = recentlyUsed.map(char =>
+                `<button class="emoji-btn" onclick="copyEmoji('${char}')" title="Copy ${char}">${char}</button>`
+            ).join('');
+        }
+
+        function addToRecent(char) {
+            recentlyUsed = recentlyUsed.filter(e => e !== char);
+            recentlyUsed.unshift(char);
+            if (recentlyUsed.length > MAX_RECENT) {
+                recentlyUsed = recentlyUsed.slice(0, MAX_RECENT);
+            }
+            localStorage.setItem('recentEmojis', JSON.stringify(recentlyUsed));
+            renderRecentlyUsed();
+        }
 
         function renderEmojis() {
             const grid = document.getElementById('emojiGrid');
@@ -424,11 +582,17 @@ $emojisJson = json_encode($emojis);
         }
 
         function filterEmojis() {
-            if (activeKeywords.length === 0) {
-                filteredEmojis = allEmojis;
-            } else {
-                // AND search: emoji must have ALL active keywords
-                filteredEmojis = allEmojis.filter(emoji => {
+            // Start with all emojis
+            let result = allEmojis;
+
+            // Filter by category if one is selected
+            if (activeCategory) {
+                result = result.filter(emoji => emoji.category === activeCategory);
+            }
+
+            // Filter by keywords if any
+            if (activeKeywords.length > 0) {
+                result = result.filter(emoji => {
                     return activeKeywords.every(keyword =>
                         emoji.keywords.some(k => k.toLowerCase().includes(keyword)) ||
                         emoji.name.toLowerCase().includes(keyword) ||
@@ -437,6 +601,7 @@ $emojisJson = json_encode($emojis);
                 });
             }
 
+            filteredEmojis = result;
             currentPage = 1;
             renderEmojis();
         }
@@ -444,6 +609,7 @@ $emojisJson = json_encode($emojis);
         function copyEmoji(char) {
             navigator.clipboard.writeText(char).then(() => {
                 showToast(`Copied ${char}`);
+                addToRecent(char);
             }).catch(err => {
                 showToast('Failed to copy');
             });
@@ -459,23 +625,9 @@ $emojisJson = json_encode($emojis);
             }, 2000);
         }
 
-        // Search input handler
-        let searchTimeout;
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                const value = e.target.value.trim();
-                if (value) {
-                    addKeyword(value);
-                    e.target.value = '';
-                }
-            }, 500);
-        });
-
-        // Also add on Enter
+        // Search input handler - only on Enter
         document.getElementById('searchInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                clearTimeout(searchTimeout);
                 const value = e.target.value.trim();
                 if (value) {
                     addKeyword(value);
@@ -485,6 +637,8 @@ $emojisJson = json_encode($emojis);
         });
 
         // Initial render
+        renderCategories();
+        renderRecentlyUsed();
         renderEmojis();
     </script>
 </body>

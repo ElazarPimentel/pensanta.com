@@ -66,7 +66,37 @@ cat gsc-reports/YYYY-MM-DD-HHMM-domain-gsc-report.json
 7. **Sitemap** - Exists? Includes all pages? Updated?
 8. **More** - Do more to get better results. Take initiative, suggest changes. Run function date to get current year, do a web search to obtain up to date information about how to enhance SEO for this project. 
 
-### Step 5: Enhance SEO to Address Issues
+### Step 5: Configure Site URL (Critical for GSC Reports)
+
+**Add site URL to config file so GSC report generator can verify folder mapping:**
+
+**Option 1: package.json (recommended for Next.js/Vite):**
+```json
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "homepage": "https://domain.com"  // Add this line
+}
+```
+
+**Option 2: .env file (alternative):**
+```bash
+SITE_URL=https://domain.com
+```
+
+**Option 3: vercel.json (if using Vercel):**
+```json
+{
+  "domains": ["domain.com"]
+}
+```
+
+**Why this matters:**
+- GSC report generator currently GUESSES folder by domain name
+- Adding URL confirms correct folder mapping
+- Prevents future errors if folders renamed
+
+### Step 6: Enhance SEO to Address Issues
 
 **For Issue Type A (0 Impressions):**
 1. Verify sitemap exists at `/public/sitemap.xml` or is auto-generated
@@ -145,7 +175,7 @@ RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301]
 Replace "domain.com" with actual domain name.
 
 
-### Step 6: Update Sitemap
+### Step 7: Update Sitemap
 **Next.js sites with auto-generation:**
 # Check if sitemap is auto-generated in next.config
 grep -i sitemap next.config.*
@@ -171,7 +201,7 @@ pnpm build  # Runs prebuild automatically
 you generate it manually or update it.
 
 
-### Step 7: Deploy Changes
+### Step 8: Deploy Changes
 **Vercel Deployment (Next.js/Vite sites):**
 
 # ALWAYS use gitpush.sh (handles add, commit, push)
@@ -194,7 +224,7 @@ ls *deploy*.sh
 - Hostinger sites: Use deploy script you found, else ask user
 - NEVER skip deployment - changes must go live
 
-### Step 8: Verify Site in GSC and Submit Sitemap via MCP
+### Step 9: Verify Site in GSC and Submit Sitemap via MCP
 
 **Check if site exists in GSC:**
 ```python
@@ -203,7 +233,23 @@ mcp__gsc__list_properties()
 # Returns: sc-domain:example.com OR https://www.example.com
 ```
 
-**If site NOT in list, add it:**
+**If site NOT in list, add and verify it (full automated workflow):**
+```python
+# 1. Get verification meta tag
+mcp__gsc__get_verification_token(site_url="https://example.com")
+# Returns: <meta name="google-site-verification" content="TOKEN" />
+
+# 2. Add the meta tag to site's <head> section (layout.tsx or index.html)
+# 3. Deploy with gitpush.sh
+
+# 4. Verify ownership (after deployment completes)
+mcp__gsc__verify_site(site_url="https://example.com")
+
+# 5. Add to Search Console as domain property
+mcp__gsc__add_site(site_url="sc-domain:example.com")
+```
+
+**If site already verified (just needs adding):**
 ```python
 # Add domain property (recommended)
 mcp__gsc__add_site(
@@ -233,7 +279,7 @@ mcp__gsc__submit_sitemap(
 
 **CRITICAL:** Wait for deployment to complete BEFORE submitting sitemap!
 
-### Step 9: Generate SEO-STATUS.txt
+### Step 10: Generate SEO-STATUS.txt
 
 **ONLY after completing ALL steps above:**
 ```bash

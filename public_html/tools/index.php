@@ -274,6 +274,7 @@
                 <a href="/es/portfolio/" class="nav-link"><span>Portfolio</span></a>
                 <a href="/about.html" class="nav-link"><span>Acerca de</span></a>
                 <a href="/tools/" class="nav-link active"><span>Tools</span></a>
+                <a href="/size/" class="nav-link"><span>Screen Size</span></a>
                 <a href="/tools/emoji/" class="nav-link"><span>Emoji</span></a>
             </nav>
         </section>
