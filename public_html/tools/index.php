@@ -276,6 +276,7 @@
                 <a href="/tools/" class="nav-link active"><span>Tools</span></a>
                 <a href="/size/" class="nav-link"><span>Screen Size</span></a>
                 <a href="/tools/emoji/" class="nav-link"><span>Emoji</span></a>
+                <a href="/tools/flashlight/" class="nav-link"><span>Linterna</span></a>
             </nav>
         </section>
 
@@ -407,7 +408,7 @@
     </main>
 
     <footer class="container-main border-01" role="contentinfo">
-        <p>&copy; 2024 Pensanta.com - Todos los derechos reservados.</p>
+        <p>&copy; 2024 ElazarPimentel.com - Todos los derechos reservados.</p>
         <small>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />

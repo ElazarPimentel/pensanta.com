@@ -275,6 +275,7 @@
                 <a href="/about-eng.html" class="nav-link"><span>About</span></a>
                 <a href="/tools/index-eng.php" class="nav-link active"><span>Tools</span></a>
                 <a href="/tools/emoji/index-eng.php" class="nav-link"><span>Emoji</span></a>
+                <a href="/tools/flashlight/index-eng.php" class="nav-link"><span>Flashlight</span></a>
             </nav>
         </section>
 
@@ -374,7 +375,7 @@
     </main>
 
     <footer class="container-main border-01" role="contentinfo">
-        <p>&copy; 2024 Pensanta.com - All rights reserved.</p>
+        <p>&copy; 2024 ElazarPimentel.com - All rights reserved.</p>
         <small>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />

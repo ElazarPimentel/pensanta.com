@@ -1,9 +1,9 @@
 {
   "site_url": "sc-domain:pensanta.com",
-  "generated_at": "2026-01-02T21:26:08.887784",
+  "generated_at": "2026-01-05T23:51:47.103506",
   "period": {
-    "start": "2025-12-05",
-    "end": "2026-01-02",
+    "start": "2025-12-08",
+    "end": "2026-01-05",
     "days": 28
   },
   "data": {
@@ -22,9 +22,9 @@
           "emoji finder"
         ],
         "clicks": 1,
-        "impressions": 27,
-        "ctr": 0.037,
-        "position": 41.6
+        "impressions": 25,
+        "ctr": 0.04,
+        "position": 38.9
       },
       {
         "keys": [
@@ -40,36 +40,36 @@
           "pensanta"
         ],
         "clicks": 1,
-        "impressions": 31,
-        "ctr": 0.0323,
-        "position": 6.6
+        "impressions": 30,
+        "ctr": 0.0333,
+        "position": 6.8
       },
       {
         "keys": [
           "ayudem"
         ],
         "clicks": 0,
-        "impressions": 5,
+        "impressions": 2,
         "ctr": 0,
-        "position": 6
+        "position": 7
       },
       {
         "keys": [
           "buscador de emojis"
         ],
         "clicks": 0,
-        "impressions": 13,
+        "impressions": 11,
         "ctr": 0,
-        "position": 9.5
+        "position": 9.6
       },
       {
         "keys": [
           "buscador emojis"
         ],
         "clicks": 0,
-        "impressions": 3,
+        "impressions": 1,
         "ctr": 0,
-        "position": 17
+        "position": 10
       },
       {
         "keys": [
@@ -94,9 +94,9 @@
           "emoji buscador"
         ],
         "clicks": 0,
-        "impressions": 7,
+        "impressions": 3,
         "ctr": 0,
-        "position": 9.4
+        "position": 8.7
       },
       {
         "keys": [
@@ -109,21 +109,12 @@
       },
       {
         "keys": [
-          "emoji search"
-        ],
-        "clicks": 0,
-        "impressions": 1,
-        "ctr": 0,
-        "position": 56
-      },
-      {
-        "keys": [
           "emoji searcher"
         ],
         "clicks": 0,
-        "impressions": 3,
+        "impressions": 2,
         "ctr": 0,
-        "position": 67.7
+        "position": 68.5
       },
       {
         "keys": [
@@ -148,9 +139,9 @@
           "emojis buscador"
         ],
         "clicks": 0,
-        "impressions": 3,
+        "impressions": 2,
         "ctr": 0,
-        "position": 10.3
+        "position": 10
       },
       {
         "keys": [
@@ -312,18 +303,27 @@
           "https://pensanta.com/tools/emoji/"
         ],
         "clicks": 3,
-        "impressions": 53,
-        "ctr": 0.0566,
-        "position": 10.6
+        "impressions": 44,
+        "ctr": 0.0682,
+        "position": 10.2
+      },
+      {
+        "keys": [
+          "https://pensanta.com/es/portfolio/"
+        ],
+        "clicks": 2,
+        "impressions": 15,
+        "ctr": 0.1333,
+        "position": 3.5
       },
       {
         "keys": [
           "https://pensanta.com/tools/emoji/index-eng.php"
         ],
         "clicks": 2,
-        "impressions": 46,
-        "ctr": 0.0435,
-        "position": 40.4
+        "impressions": 41,
+        "ctr": 0.0488,
+        "position": 38.6
       },
       {
         "keys": [
@@ -336,21 +336,12 @@
       },
       {
         "keys": [
-          "https://pensanta.com/es/portfolio/"
-        ],
-        "clicks": 1,
-        "impressions": 12,
-        "ctr": 0.0833,
-        "position": 3.4
-      },
-      {
-        "keys": [
           "https://ayudem.pensanta.com/"
         ],
         "clicks": 0,
-        "impressions": 6,
+        "impressions": 3,
         "ctr": 0,
-        "position": 5.7
+        "position": 6
       },
       {
         "keys": [
@@ -417,6 +408,15 @@
       },
       {
         "keys": [
+          "https://penkosh.pensanta.com/product/211"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
           "https://penkosh.pensanta.com/product/2158"
         ],
         "clicks": 0,
@@ -450,6 +450,15 @@
         "impressions": 1,
         "ctr": 0,
         "position": 13
+      },
+      {
+        "keys": [
+          "https://penkosh.pensanta.com/product/2999"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
       },
       {
         "keys": [
@@ -492,18 +501,18 @@
           "https://pensanta.com/about.html"
         ],
         "clicks": 0,
-        "impressions": 25,
+        "impressions": 26,
         "ctr": 0,
-        "position": 10.6
+        "position": 10.5
       },
       {
         "keys": [
           "https://pensanta.com/index-eng.html"
         ],
         "clicks": 0,
-        "impressions": 21,
+        "impressions": 18,
         "ctr": 0,
-        "position": 2.2
+        "position": 2.1
       }
     ],
     "devices_28d": [
@@ -511,10 +520,10 @@
         "keys": [
           "MOBILE"
         ],
-        "clicks": 5,
-        "impressions": 112,
-        "ctr": 0.0446,
-        "position": 8.7
+        "clicks": 6,
+        "impressions": 114,
+        "ctr": 0.0526,
+        "position": 8.8
       },
       {
         "keys": [
@@ -530,39 +539,12 @@
           "DESKTOP"
         ],
         "clicks": 2,
-        "impressions": 174,
-        "ctr": 0.0115,
-        "position": 22.7
+        "impressions": 160,
+        "ctr": 0.0125,
+        "position": 22.1
       }
     ],
     "daily_28d": [
-      {
-        "keys": [
-          "2025-12-05"
-        ],
-        "clicks": 0,
-        "impressions": 10,
-        "ctr": 0,
-        "position": 11.1
-      },
-      {
-        "keys": [
-          "2025-12-06"
-        ],
-        "clicks": 0,
-        "impressions": 6,
-        "ctr": 0,
-        "position": 16
-      },
-      {
-        "keys": [
-          "2025-12-07"
-        ],
-        "clicks": 0,
-        "impressions": 8,
-        "ctr": 0,
-        "position": 29.1
-      },
       {
         "keys": [
           "2025-12-08"
@@ -778,15 +760,100 @@
         "impressions": 4,
         "ctr": 0,
         "position": 7
+      },
+      {
+        "keys": [
+          "2026-01-01"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "2026-01-02"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "2026-01-03"
+        ],
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": 0.1667,
+        "position": 5.8
       }
-    ]
+    ],
+    "url_inspection": {
+      "total_inspected": 10,
+      "not_indexed_count": 0,
+      "not_indexed": [],
+      "all_results": [
+        {
+          "url": "https://lotoplus.pensanta.com/",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://pensanta.com/tools/emoji/",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://pensanta.com/es/portfolio/",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://pensanta.com/tools/emoji/index-eng.php",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://penkosh.pensanta.com/product/610",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://ayudem.pensanta.com/",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://penkosh.pensanta.com/",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://penkosh.pensanta.com/product/1245",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://penkosh.pensanta.com/product/1246",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        },
+        {
+          "url": "https://penkosh.pensanta.com/product/1493",
+          "error": "<HttpError 403 when requesting https://searchconsole.googleapis.com/v1/urlInspection/index:inspect?alt=json returned \"You do not own this site, or the inspected URL is not part of this property.\". Details: \"You do not own this site, or the inspected URL is not part of this property.\">",
+          "verdict": "ERROR"
+        }
+      ]
+    }
   },
   "summary": {
     "total_clicks_28d": 6,
-    "total_impressions_28d": 128,
-    "average_ctr_28d": 4.6875,
-    "total_queries": 32,
-    "total_pages": 23
+    "total_impressions_28d": 111,
+    "average_ctr_28d": 5.405405405405405,
+    "total_queries": 31,
+    "total_pages": 25,
+    "not_indexed_count": 0
   },
   "folder_name": "pensanta-com"
 }

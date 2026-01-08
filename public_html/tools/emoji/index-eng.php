@@ -436,7 +436,7 @@ $emojisJson = json_encode($emojis);
     </main>
 
     <footer class="container-main border-01" role="contentinfo">
-        <p>&copy; 2024 Pensanta.com - All rights reserved.</p>
+        <p>&copy; 2024 ElazarPimentel.com - All rights reserved.</p>
         <small>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />
