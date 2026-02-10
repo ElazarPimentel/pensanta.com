@@ -1,0 +1,16 @@
+{
+  "buildCommand": "echo \"Static site: no build step required\"",
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/en", "destination": "/en/", "permanent": false },
+    { "source": "/tools", "destination": "/#herramientas", "permanent": true },
+    { "source": "/tools/", "destination": "/#herramientas", "permanent": true },
+    { "source": "/tools/(.*)", "destination": "/#herramientas", "permanent": true },
+    { "source": "/about.html", "destination": "/", "permanent": true },
+    { "source": "/about-eng.html", "destination": "/en/", "permanent": true },
+    { "source": "/index-eng.html", "destination": "/en/", "permanent": true },
+    { "source": "/es/portfolio/", "destination": "/#portfolio", "permanent": true },
+    { "source": "/en/portfolio/", "destination": "/en/#portfolio", "permanent": true },
+    { "source": "/size/", "destination": "/", "permanent": true }
+  ]
+}

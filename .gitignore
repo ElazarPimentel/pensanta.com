@@ -43,6 +43,7 @@ logs/
 
 # Project files
 CLAUDE.md
+AGENTS.md
 server.js
 deploytohostinger.sh
 gitpush.sh
@@ -51,3 +52,14 @@ screenshot-temp.js
 batch-screenshots.js
 iam01.txt
 portfolio.yaml
+
+# Project metadata
+.project-meta.json
+.project-auto.json
+
+# GSC
+gsc-service-account.json
+gsc-reports/
+
+# Grok
+.grok/

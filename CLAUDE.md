@@ -1,216 +1,117 @@
-# Pensanta Website Enhancement Project
+# Pensanta.com - Web Development Company
 
-## Project Overview
-Professional project management consultancy website with bilingual support (Spanish/English), focusing on minimal design, accessibility, and performance.
+Company website for Pensanta, a web development company in Buenos Aires. Single-page static site mirroring elazarpimentel.com's design.
+
+## Tech Stack
+- Pure HTML/CSS/JS (no frameworks)
+- Cormorant Garamond + DM Sans (Google Fonts)
+- Vercel deployment (static)
+
+## Commands
+```bash
+# No build step needed - static site
+gitpush.sh      # Deploy to Vercel
+```
+
+**NEVER run dev servers** - use `pnpm build` or just open index.html in browser.
 
 ## Design System
 
-### Core Philosophy
-- **Mobile-first**: Design for mobile, enhance for larger screens
-- **Semantic-first**: HTML5 elements over divs/spans
-- **Minimal CSS**: Only essential styles, no bloat
-- **Dark-theme default**: Modern, professional appearance
-- **Accessibility-first**: WCAG 2.1 AA compliance minimum
-- **Performance-focused**: Fast loading, minimal resources
+### Colors (CSS variables in styles.css)
+- `--color-cream`: #faf8f5 (background)
+- `--color-charcoal`: #1a1a1a (text, dark sections)
+- `--color-accent`: #4a9eff (blue CTAs)
+- `--color-accent-hover`: #2980ff
+- `--color-gold`: #c9a227 (highlights)
+- `--color-sage`: #7d9a78 (checkmarks)
 
-### Color Palette
-```css
-:root {
-  /* Primary Colors */
-  --color-background: #000000;
-  --color-surface: #111111;
-  --color-surface-elevated: #222222;
-  
-  /* Text Colors */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #e0e0e0;
-  --color-text-muted: #a0a0a0;
-  
-  /* Accent Colors */
-  --color-accent: #4a9eff;
-  --color-accent-hover: #2980ff;
-  --color-success: #00d084;
-  --color-warning: #ffb800;
-  --color-error: #ff5722;
-  
-  /* Border Colors */
-  --color-border-primary: #404040;
-  --color-border-secondary: #606060;
-}
-```
+### Typography
+- Display: Cormorant Garamond (serif)
+- Body: DM Sans (sans-serif)
 
-### Spacing System (rem-based)
-```css
-:root {
-  --space-xs: 0.25rem;    /* 4px */
-  --space-sm: 0.5rem;     /* 8px */
-  --space-md: 1rem;       /* 16px */
-  --space-lg: 1.5rem;     /* 24px */
-  --space-xl: 2rem;       /* 32px */
-  --space-2xl: 3rem;      /* 48px */
-  --space-3xl: 4rem;      /* 64px */
-}
-```
+### Aesthetic
+Editorial/luxury with warmth. Same as elazarpimentel.com but with blue accent instead of terracotta.
 
-### Typography Scale
-```css
-:root {
-  --font-family-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-  --font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Droid Sans Mono", monospace;
-  
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-base: 1rem;    /* 16px */
-  --font-size-lg: 1.125rem;  /* 18px */
-  --font-size-xl: 1.25rem;   /* 20px */
-  --font-size-2xl: 1.5rem;   /* 24px */
-  --font-size-3xl: 2rem;     /* 32px */
-  --font-size-4xl: 2.5rem;   /* 40px */
-  
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-}
-```
+## Structure
 
-### Border Radius System
-```css
-:root {
-  --radius-sm: 0.25rem;    /* 4px */
-  --radius-md: 0.5rem;     /* 8px */
-  --radius-lg: 1rem;       /* 16px */
-  --radius-xl: 1.5rem;     /* 24px */
-  --radius-full: 9999px;   /* Full rounded */
-}
-```
+Single page with sections:
+1. **Hero** - "Hacemos sitios web y aplicaciones para empresas reales" + laptop mockup
+2. **Reassurance** - "Vos ocupate de tu negocio, nosotros nos encargamos de la tecnología"
+3. **Services** - 3 cards (Sitios Web, Aplicaciones Web, E-commerce)
+4. **Portfolio** - 7 projects with video previews (Ayudem, Esparza, Lo de Victor, Contenido, Borisiuk, Puia, Kids Club)
+5. **Additional Services** - PM, Security, Training (compact list)
+6. **Pricing** - 3 tiers (Landing $500k, Full $1.5M, E-commerce $2.5M)
+7. **Team** - Elazar (Founder), Mauricio (Tech Lead), Victoria (Security)
+8. **Tools** - Password Generator + IP Detector (client-side JS)
+9. **Process** - 3 steps
+10. **FAQ** - 6 questions
+11. **Contact** - WhatsApp CTA box
 
-## Semantic HTML Guidelines
+## Key Files
+- `index.html` - Spanish homepage (root)
+- `en/index.html` - English version
+- `styles.css` - All styles (based on elazarpimentel.com)
+- `site.js` - Menu, tracking, reduced motion
+- `vercel.json` - Vercel config with redirects from old site paths
 
-### Required Elements
-- `<header>` with proper `role="banner"`
-- `<nav>` with `role="navigation"` and `aria-label`
-- `<main>` with `role="main"` and `id="main-content"`
-- `<section>` for distinct content areas with headings
-- `<footer>` with `role="contentinfo"`
+## Configuration
 
-### Accessibility Requirements
-- Skip navigation links
-- Proper heading hierarchy (h1 → h2 → h3)
-- ARIA labels for interactive elements
-- Focus management and keyboard navigation
-- Color contrast ratio 4.5:1 minimum
-- Alternative text for images
-- Form labels and descriptions
+### Configured
+- **GTM**: GTM-PBM2Z8BN
+- **GA4**: G-5ZVYDQXCG7 (via GTM)
+- **WhatsApp**: 5491137990312 with tracking
+- **Contact email**: elazar.pimentel@pensanta.com
+- **Phone**: +54-9-11-3799-0312
 
-## Performance Standards
+### Analytics Events
+- `whatsapp_click` (generate_lead) - WhatsApp link clicks
+- `portfolio_click` (view_item) - Portfolio project clicks
+- `tool_usage` - Password generator / IP detector usage
 
-### Core Web Vitals Targets
-- **LCP (Largest Contentful Paint)**: < 2.5s
-- **FID (First Input Delay)**: < 100ms
-- **CLS (Cumulative Layout Shift)**: < 0.1
+## Routing
+- `/` → Spanish (default)
+- `/en/` → English
+- Old paths redirect: /tools/ → /#herramientas, /about.html → /, etc.
 
-### Optimization Strategies
-- Minimize CSS and eliminate unused styles
-- Optimize images (WebP format, proper sizing)
-- Use system fonts to avoid font loading delays
-- Implement critical CSS inlining
-- Minimize JavaScript usage
+## Prices (same as elazarpimentel.com)
+- Landing Page: $500.000 ARS (U$S 350)
+- Sitio Full: $1.500.000 ARS (U$S 1.000)
+- E-commerce: $2.500.000 ARS (U$S 1.700)
 
-## Browser Support
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-- Mobile Safari (iOS 14+)
-- Chrome Mobile (Android 10+)
+## SEO
+- Schema.org: WebSite, ProfessionalService, FAQPage
+- Open Graph + Twitter Cards
+- Hreflang: es (default), en (/en/)
+- Sitemap: sitemap.xml
+- Robots: robots.txt
 
-## File Organization
-```
-/
-├── index.html (Spanish)
-├── index-eng.html (English)
-├── css/
-│   ├── styles.css (main stylesheet)
-│   └── critical.css (above-the-fold styles)
-├── img/
-│   ├── *.webp (optimized images)
-│   └── *.svg (icons and graphics)
-└── js/ (if needed)
-    └── main.js (progressive enhancement only)
-```
+## Portfolio Sites
+1. Ayudem → ayudem.com.ar (enterprise app)
+2. Dra. Andrea Esparza → draandreaesparza.com
+3. Lo de Victor → lodevictor.com
+4. Contenido Pensanta → contenido.pensanta.com (automation)
+5. Grupo Borisiuk → borisiuk.com.ar (10+ sites)
+6. Puia Dental Care → puiadentalcare.com
+7. Kids Club Café → kidsclubcafe.com.ar
 
-## Enhancement Priorities
+## Videos
+- `/videos/` - Portfolio video previews (.mp4)
+- Missing videos: ayudem.mp4, borisiuk.mp4 (use poster fallback)
+- Available: draandreaesparza-com.mp4, lo-de-victor.mp4, puia.mp4, kidsclubcafe.mp4
 
-### Phase 1: Foundation (High Impact)
-1. Standardize semantic HTML across both language versions
-2. Implement consistent accessibility features
-3. Modernize CSS organization with custom properties
-4. Optimize responsive design for mobile-first approach
+## Deployment
+- Target: Vercel (static, no build)
+- Domain: pensanta.com
+- Previous: Hostinger via FTP (deploytohostinger.sh - deprecated)
 
-### Phase 2: Polish (Medium Impact)
-1. Enhance visual design with micro-interactions
-2. Implement performance optimizations
-3. Add progressive enhancement features
-4. Improve SEO and metadata consistency
+## Migration Notes
+- Old site in `public_html/` (preserved for reference)
+- Tools (password gen, IP detect) converted from PHP to client-side JS
+- Emoji tool dropped (database-dependent)
+- Old redirects configured in vercel.json
 
-### Phase 3: Advanced (Low Impact)
-1. Advanced animations and transitions
-2. Service worker for offline functionality
-3. Advanced analytics and tracking
-4. A/B testing capabilities
-
-## Code Quality Standards
-
-### CSS
-- Use CSS custom properties for all design tokens
-- Follow BEM methodology for class naming
-- Group related styles logically
-- Use progressive enhancement approach
-- Minimize specificity conflicts
-
-### HTML
-- Validate against HTML5 standards
-- Ensure semantic meaning over visual appearance
-- Use appropriate ARIA attributes
-- Maintain consistent indentation (2 spaces)
-- Include proper meta tags and structured data
-
-### General
-- Mobile-first responsive design
-- Progressive enhancement over graceful degradation
-- Performance budget: < 100KB initial page load
-- Accessibility testing with screen readers
-- Cross-browser testing on target browsers
-
-## Testing Checklist
-
-### Accessibility
-- [ ] Screen reader compatibility (NVDA, JAWS, VoiceOver)
-- [ ] Keyboard navigation functionality
-- [ ] Color contrast validation
-- [ ] Focus indicator visibility
-- [ ] ARIA attributes correctness
-
-### Performance
-- [ ] Lighthouse score > 90 for all metrics
-- [ ] WebPageTest analysis
-- [ ] Mobile performance testing
-- [ ] Image optimization validation
-- [ ] CSS and JS minification
-
-### Compatibility
-- [ ] Cross-browser testing
-- [ ] Mobile device testing
-- [ ] Print stylesheet functionality
-- [ ] High contrast mode support
-- [ ] Reduced motion preferences
-
-## Deployment Considerations
-- Use semantic versioning for releases
-- Implement proper caching strategies
-- Ensure HTTPS certificate validity
-- Monitor Core Web Vitals in production
-- Regular accessibility audits
+## GSC Service Account
+`gsc-service-account.json` (gitignored) - shared with other sites.
 
 ---
-*This document serves as the source of truth for all design and development decisions on the Pensanta website project.*
+Last updated: 2026-02-09

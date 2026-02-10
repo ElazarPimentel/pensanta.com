@@ -1,0 +1,6 @@
+# robots.txt for pensanta.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pensanta.com/sitemap.xml
