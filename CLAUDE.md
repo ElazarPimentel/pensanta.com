@@ -100,18 +100,31 @@ Single page with sections:
 - Available: draandreaesparza-com.mp4, lo-de-victor.mp4, puia.mp4, kidsclubcafe.mp4
 
 ## Deployment
-- Target: Vercel (static, no build)
+- Target: Vercel (static, no build step)
+- Vercel project: `elazar-pimentel-portfolio/pensanta-com`
 - Domain: pensanta.com
-- Previous: Hostinger via FTP (deploytohostinger.sh - deprecated)
+- Deploy: `gitpush.sh` (commits + pushes, Vercel auto-deploys)
+- No `pnpm-lock.yaml` — static site has zero dependencies
+- Previous: Hostinger via FTP (deploytohostinger.sh — deprecated)
 
-## Migration Notes
-- Old site in `public_html/` (preserved for reference)
+## Migration Notes (Feb 2026)
+- Redesigned from dark-themed multi-page site to single-page editorial layout
+- Design cloned from elazarpimentel.com (terracotta → blue accent)
+- Old site preserved in `public_html/` for reference
 - Tools (password gen, IP detect) converted from PHP to client-side JS
 - Emoji tool dropped (database-dependent)
-- Old redirects configured in vercel.json
+- deploytohostinger.sh no longer used (kept in repo, gitignored)
+- Old URL paths redirected in vercel.json (/tools/, /about.html, /index-eng.html, etc.)
+
+## TODO
+- [ ] Create Pensanta-branded favicon.svg (currently using EP monogram from elazarpimentel.com)
+- [ ] Create Pensanta-branded og-image.jpg (currently reusing elazarpimentel.com image)
+- [ ] Record ayudem.mp4 video for portfolio
+- [ ] Record borisiuk.mp4 video for portfolio
+- [ ] Submit updated sitemap to GSC
 
 ## GSC Service Account
-`gsc-service-account.json` (gitignored) - shared with other sites.
+`gsc-service-account.json` (gitignored) — shared with other sites.
 
 ---
 Last updated: 2026-02-09

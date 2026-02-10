@@ -63,3 +63,4 @@ gsc-reports/
 
 # Grok
 .grok/
+.vercel
