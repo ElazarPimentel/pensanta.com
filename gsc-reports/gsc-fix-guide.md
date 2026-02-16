@@ -256,10 +256,8 @@ mcp__gsc__add_site(
   site_url="sc-domain:example.com"
 )
 
-# OR add URL prefix property
-mcp__gsc__add_site(
-  site_url="https://www.example.com"
-)
+# ALWAYS use domain property, NOT URL prefix
+# URL prefix (https://example.com/) is inferior — doesn't cover subdomains or both http/https
 ```
 
 **Check current sitemap status:**
