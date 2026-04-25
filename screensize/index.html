@@ -106,10 +106,17 @@
 
     let lastMouse = { x: '—', y: '—' };
     let pointerValueEl = null;
+    let scrollValueEl = null;
 
     function updatePointerCard() {
       if (pointerValueEl) {
         pointerValueEl.textContent = lastMouse.x + ' / ' + lastMouse.y;
+      }
+    }
+
+    function updateScrollCard() {
+      if (scrollValueEl) {
+        scrollValueEl.textContent = window.scrollX + ' / ' + window.scrollY + ' px';
       }
     }
 
@@ -179,7 +186,9 @@
       grid.appendChild(section('Document'));
       grid.appendChild(card('scrollWidth', document.documentElement.scrollWidth + ' px'));
       grid.appendChild(card('scrollHeight', document.documentElement.scrollHeight + ' px'));
-      grid.appendChild(card('scrollX / scrollY', window.scrollX + ' / ' + window.scrollY + ' px'));
+      const scrollCard = card('scrollX / scrollY', window.scrollX + ' / ' + window.scrollY + ' px');
+      scrollValueEl = scrollCard.querySelector('.val');
+      grid.appendChild(scrollCard);
 
       grid.appendChild(section('Pointer'));
       const pointerCard = card('last clientX / clientY', lastMouse.x + ' / ' + lastMouse.y, 'move cursor');
@@ -203,10 +212,10 @@
     render();
     window.addEventListener('resize', render, { passive: true });
     window.addEventListener('orientationchange', render, { passive: true });
-    window.addEventListener('scroll', render, { passive: true });
+    window.addEventListener('scroll', updateScrollCard, { passive: true });
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', render, { passive: true });
-      window.visualViewport.addEventListener('scroll', render, { passive: true });
+      window.visualViewport.addEventListener('scroll', updateScrollCard, { passive: true });
     }
   </script>
 </body>
