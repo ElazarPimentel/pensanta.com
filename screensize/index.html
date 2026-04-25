@@ -105,9 +105,17 @@
     }
 
     let lastMouse = { x: '—', y: '—' };
+    let pointerValueEl = null;
+
+    function updatePointerCard() {
+      if (pointerValueEl) {
+        pointerValueEl.textContent = lastMouse.x + ' / ' + lastMouse.y;
+      }
+    }
+
     window.addEventListener('pointermove', (e) => {
       lastMouse = { x: e.clientX, y: e.clientY };
-      render();
+      updatePointerCard();
     }, { passive: true });
 
     function render() {
@@ -127,8 +135,10 @@
       $('vw').textContent = vw;
       $('vh').textContent = vh;
 
-      const d = gcd(vw, vh);
-      const ratio = `${vw / d}:${vh / d}`;
+      const vwInt = Math.floor(vw);
+      const vhInt = Math.floor(vh);
+      const d = gcd(vwInt, vhInt);
+      const ratio = d ? `${vwInt / d}:${vhInt / d}` : '—';
       const decimal = (vw / vh).toFixed(3);
       $('ratio').textContent = `aspect ratio ${ratio} (${decimal}) · ${orient} · ${tailwindBp(vw)} · bootstrap ${bootstrapBp(vw)}`;
 
@@ -172,7 +182,9 @@
       grid.appendChild(card('scrollX / scrollY', window.scrollX + ' / ' + window.scrollY + ' px'));
 
       grid.appendChild(section('Pointer'));
-      grid.appendChild(card('last clientX / clientY', lastMouse.x + ' / ' + lastMouse.y, 'move cursor'));
+      const pointerCard = card('last clientX / clientY', lastMouse.x + ' / ' + lastMouse.y, 'move cursor');
+      pointerValueEl = pointerCard.querySelector('.val');
+      grid.appendChild(pointerCard);
 
       grid.appendChild(section('Environment'));
       grid.appendChild(card('userAgent', navigator.userAgent));
