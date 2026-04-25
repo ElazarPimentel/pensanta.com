@@ -1238,6 +1238,13 @@ button:focus-visible {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.version {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
 .footer-links {
   display: flex;
   gap: 2rem;
