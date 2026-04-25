@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Screen Size — Pensanta</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #4a9eff;
+      --border: #e5e1d8;
+      --card: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#1a1a1a; --fg:#faf8f5; --muted:#9a9a9a; --border:#2e2e2e; --card:#222; }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    body { min-height: 100vh; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1.5rem; letter-spacing: 0.02em; text-transform: uppercase; }
+    h1 .dot { display: inline-block; width: 0.5rem; height: 0.5rem; background: var(--accent); border-radius: 50%; margin-right: 0.5rem; vertical-align: middle; }
+    .hero { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2.5rem, 10vw, 6rem); font-weight: 500; line-height: 1; letter-spacing: -0.02em; margin: 0 0 2rem; }
+    .hero .x { color: var(--muted); margin: 0 0.2em; }
+    .hero .unit { font-family: inherit; font-size: 0.35em; color: var(--muted); vertical-align: middle; margin-left: 0.3em; letter-spacing: 0; }
+    .ratio { color: var(--muted); font-size: 0.95rem; margin: -1rem 0 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; max-width: 1100px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0.85rem 1rem; }
+    .card dt { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem; }
+    .card dd { margin: 0; font-size: 1rem; word-break: break-word; }
+    .card dd .val { font-weight: 600; }
+    .card dd .sub { color: var(--muted); font-size: 0.85rem; margin-left: 0.4em; }
+    .section-label { grid-column: 1 / -1; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin: 1.25rem 0 0.25rem; }
+    .section-label:first-child { margin-top: 0; }
+    .breakpoint { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 3px; background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.8rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1><span class="dot"></span>pensanta · screensize</h1>
+
+  <div class="hero"><span id="vw">—</span><span class="x">×</span><span id="vh">—</span><span class="unit">px · CSS viewport</span></div>
+  <div class="ratio" id="ratio"></div>
+
+  <dl class="grid" id="grid"></dl>
+
+  <footer>
+    Live values update on resize, orientation change, and pointer move. <a href="/">← pensanta.com</a>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const grid = $('grid');
+
+    function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+
+    function card(label, value, sub) {
+      const dt = document.createElement('dt');
+      dt.textContent = label;
+      const dd = document.createElement('dd');
+      const v = document.createElement('span');
+      v.className = 'val';
+      v.textContent = value;
+      dd.appendChild(v);
+      if (sub) {
+        const s = document.createElement('span');
+        s.className = 'sub';
+        s.textContent = sub;
+        dd.appendChild(s);
+      }
+      const wrap = document.createElement('div');
+      wrap.className = 'card';
+      wrap.appendChild(dt);
+      wrap.appendChild(dd);
+      return wrap;
+    }
+
+    function section(label) {
+      const el = document.createElement('div');
+      el.className = 'section-label';
+      el.textContent = label;
+      return el;
+    }
+
+    function tailwindBp(w) {
+      if (w >= 1536) return '2xl ≥1536';
+      if (w >= 1280) return 'xl ≥1280';
+      if (w >= 1024) return 'lg ≥1024';
+      if (w >= 768)  return 'md ≥768';
+      if (w >= 640)  return 'sm ≥640';
+      return 'xs <640';
+    }
+
+    function bootstrapBp(w) {
+      if (w >= 1400) return 'xxl ≥1400';
+      if (w >= 1200) return 'xl ≥1200';
+      if (w >= 992)  return 'lg ≥992';
+      if (w >= 768)  return 'md ≥768';
+      if (w >= 576)  return 'sm ≥576';
+      return 'xs <576';
+    }
+
+    let lastMouse = { x: '—', y: '—' };
+    window.addEventListener('pointermove', (e) => {
+      lastMouse = { x: e.clientX, y: e.clientY };
+      render();
+    }, { passive: true });
+
+    function render() {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const sw = window.screen.width;
+      const sh = window.screen.height;
+      const aw = window.screen.availWidth;
+      const ah = window.screen.availHeight;
+      const ow = window.outerWidth;
+      const oh = window.outerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      const cd = window.screen.colorDepth;
+      const orient = (window.screen.orientation && window.screen.orientation.type) || (vw > vh ? 'landscape' : 'portrait');
+      const hairline = 1 / dpr;
+
+      $('vw').textContent = vw;
+      $('vh').textContent = vh;
+
+      const d = gcd(vw, vh);
+      const ratio = `${vw / d}:${vh / d}`;
+      const decimal = (vw / vh).toFixed(3);
+      $('ratio').textContent = `aspect ratio ${ratio} (${decimal}) · ${orient} · ${tailwindBp(vw)} · bootstrap ${bootstrapBp(vw)}`;
+
+      grid.innerHTML = '';
+
+      grid.appendChild(section('Viewport (CSS pixels)'));
+      grid.appendChild(card('window.innerWidth', vw + ' px'));
+      grid.appendChild(card('window.innerHeight', vh + ' px'));
+      grid.appendChild(card('document.documentElement.clientWidth', document.documentElement.clientWidth + ' px'));
+      grid.appendChild(card('document.documentElement.clientHeight', document.documentElement.clientHeight + ' px'));
+      grid.appendChild(card('visualViewport.width', (window.visualViewport ? Math.round(window.visualViewport.width) : '—') + ' px'));
+      grid.appendChild(card('visualViewport.height', (window.visualViewport ? Math.round(window.visualViewport.height) : '—') + ' px'));
+      grid.appendChild(card('visualViewport.scale', window.visualViewport ? window.visualViewport.scale.toFixed(3) : '—'));
+
+      grid.appendChild(section('Window (including chrome)'));
+      grid.appendChild(card('window.outerWidth', ow + ' px'));
+      grid.appendChild(card('window.outerHeight', oh + ' px'));
+      grid.appendChild(card('chrome width', (ow - vw) + ' px', 'outer − inner'));
+      grid.appendChild(card('chrome height', (oh - vh) + ' px', 'outer − inner'));
+      grid.appendChild(card('window.screenX', window.screenX + ' px'));
+      grid.appendChild(card('window.screenY', window.screenY + ' px'));
+
+      grid.appendChild(section('Screen'));
+      grid.appendChild(card('screen.width', sw + ' px'));
+      grid.appendChild(card('screen.height', sh + ' px'));
+      grid.appendChild(card('screen.availWidth', aw + ' px', 'minus OS chrome'));
+      grid.appendChild(card('screen.availHeight', ah + ' px', 'minus OS chrome'));
+      grid.appendChild(card('physical width', Math.round(sw * dpr) + ' px', 'screen.width × DPR'));
+      grid.appendChild(card('physical height', Math.round(sh * dpr) + ' px', 'screen.height × DPR'));
+      grid.appendChild(card('colorDepth', cd + '-bit'));
+      grid.appendChild(card('orientation', orient));
+
+      grid.appendChild(section('Pixel density'));
+      grid.appendChild(card('devicePixelRatio', dpr.toFixed(3) + '×'));
+      grid.appendChild(card('1 CSS px =', (dpr).toFixed(3) + ' device px'));
+      grid.appendChild(card('1 device px =', hairline.toFixed(4) + ' CSS px', 'hairline'));
+
+      grid.appendChild(section('Document'));
+      grid.appendChild(card('scrollWidth', document.documentElement.scrollWidth + ' px'));
+      grid.appendChild(card('scrollHeight', document.documentElement.scrollHeight + ' px'));
+      grid.appendChild(card('scrollX / scrollY', window.scrollX + ' / ' + window.scrollY + ' px'));
+
+      grid.appendChild(section('Pointer'));
+      grid.appendChild(card('last clientX / clientY', lastMouse.x + ' / ' + lastMouse.y, 'move cursor'));
+
+      grid.appendChild(section('Environment'));
+      grid.appendChild(card('userAgent', navigator.userAgent));
+      grid.appendChild(card('platform', navigator.platform || '—'));
+      grid.appendChild(card('language', navigator.language));
+      grid.appendChild(card('cookieEnabled', String(navigator.cookieEnabled)));
+      grid.appendChild(card('online', String(navigator.onLine)));
+      grid.appendChild(card('touch points', String(navigator.maxTouchPoints || 0)));
+      grid.appendChild(card('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone));
+      grid.appendChild(card('prefers color scheme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      grid.appendChild(card('prefers reduced motion', matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'no-preference'));
+      grid.appendChild(card('pointer: fine?', matchMedia('(pointer: fine)').matches ? 'yes' : 'no'));
+      grid.appendChild(card('hover: hover?', matchMedia('(hover: hover)').matches ? 'yes' : 'no'));
+    }
+
+    render();
+    window.addEventListener('resize', render, { passive: true });
+    window.addEventListener('orientationchange', render, { passive: true });
+    window.addEventListener('scroll', render, { passive: true });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', render, { passive: true });
+      window.visualViewport.addEventListener('scroll', render, { passive: true });
+    }
+  </script>
+</body>
+</html>

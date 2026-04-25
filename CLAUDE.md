@@ -3,17 +3,18 @@
 Company website for Pensanta, a web development company in Buenos Aires. Single-page static site mirroring elazarpimentel.com's design.
 
 ## Tech Stack
-- Pure HTML/CSS/JS (no frameworks)
+- Pure HTML/CSS/JS (no frameworks, no build step, zero dependencies)
 - Cormorant Garamond + DM Sans (Google Fonts)
 - Vercel deployment (static)
 
 ## Commands
 ```bash
-# No build step needed - static site
-gitpush.sh      # Deploy to Vercel
+gitpush.sh      # Commits + pushes; Vercel auto-deploys
 ```
 
-**NEVER run dev servers** - use `pnpm build` or just open index.html in browser.
+**NEVER run dev servers** — open `index.html` directly in the browser.
+
+**Auto-deploy rule:** After finishing any task the user asked for (or agreed to) in this repo, run `gitpush.sh` without asking for confirmation. Skip only if the user explicitly says not to deploy, or if there are no changes to commit.
 
 ## Design System
 
@@ -38,9 +39,9 @@ Single page with sections:
 1. **Hero** - "Hacemos sitios web y aplicaciones para empresas reales" + laptop mockup
 2. **Reassurance** - "Vos ocupate de tu negocio, nosotros nos encargamos de la tecnología"
 3. **Services** - 3 cards (Sitios Web, Aplicaciones Web, E-commerce)
-4. **Portfolio** - 7 projects with video previews (Ayudem, Esparza, Lo de Victor, Contenido, Borisiuk, Puia, Kids Club)
-5. **Additional Services** - PM, Security, Training (compact list)
-6. **Pricing** - 3 tiers (Landing $500k, Full $1.5M, E-commerce $2.5M)
+4. **Portfolio** - 7 projects with video previews
+5. **Additional Services** - PM, Security, Training
+6. **Pricing** - 3 tiers
 7. **Team** - Elazar (Founder), Mauricio (Tech Lead), Victoria (Security)
 8. **Tools** - Password Generator + IP Detector (client-side JS)
 9. **Process** - 3 steps
@@ -50,13 +51,12 @@ Single page with sections:
 ## Key Files
 - `index.html` - Spanish homepage (root)
 - `en/index.html` - English version
-- `styles.css` - All styles (based on elazarpimentel.com)
+- `styles.css` - All styles
 - `site.js` - Menu, tracking, reduced motion
 - `vercel.json` - Vercel config with redirects from old site paths
+- `public_html/` - Old multi-page site preserved for reference (not deployed)
 
 ## Configuration
-
-### Configured
 - **GTM**: GTM-PBM2Z8BN
 - **GA4**: G-5ZVYDQXCG7 (via GTM)
 - **WhatsApp**: 5491137990312 with tracking
@@ -64,14 +64,14 @@ Single page with sections:
 - **Phone**: +54-9-11-3799-0312
 
 ### Analytics Events
-- `whatsapp_click` (generate_lead) - WhatsApp link clicks
-- `portfolio_click` (view_item) - Portfolio project clicks
+- `generate_lead` (label `whatsapp_click`) - WhatsApp link clicks
+- `view_item` (portfolio) - Portfolio project clicks
 - `tool_usage` - Password generator / IP detector usage
 
 ## Routing
 - `/` → Spanish (default)
 - `/en/` → English
-- Old paths redirect: /tools/ → /#herramientas, /about.html → /, etc.
+- Old paths redirect via `vercel.json`: `/tools/` → `/#herramientas`, `/about.html` → `/`, `/index-eng.html` → `/en/`, etc.
 
 ## Prices (same as elazarpimentel.com)
 - Landing Page: $500.000 ARS (U$S 350)
@@ -82,8 +82,7 @@ Single page with sections:
 - Schema.org: WebSite, ProfessionalService, FAQPage
 - Open Graph + Twitter Cards
 - Hreflang: es (default), en (/en/)
-- Sitemap: sitemap.xml
-- Robots: robots.txt
+- `sitemap.xml`, `robots.txt`
 
 ## Portfolio Sites
 1. Ayudem → ayudem.com.ar (enterprise app)
@@ -94,37 +93,13 @@ Single page with sections:
 6. Puia Dental Care → puiadentalcare.com
 7. Kids Club Café → kidsclubcafe.com.ar
 
-## Videos
-- `/videos/` - Portfolio video previews (.mp4)
-- Missing videos: ayudem.mp4, borisiuk.mp4 (use poster fallback)
-- Available: draandreaesparza-com.mp4, lo-de-victor.mp4, puia.mp4, kidsclubcafe.mp4
+Videos live in `/videos/*.mp4`. Projects without a video fall back to `portfolio-poster.svg`.
 
 ## Deployment
-- Target: Vercel (static, no build step)
+- Target: Vercel (static, no build)
 - Vercel project: `elazar-pimentel-portfolio/pensanta-com`
 - Domain: pensanta.com
-- Deploy: `gitpush.sh` (commits + pushes, Vercel auto-deploys)
-- No `pnpm-lock.yaml` — static site has zero dependencies
-- Previous: Hostinger via FTP (deploytohostinger.sh — deprecated)
-
-## Migration Notes (Feb 2026)
-- Redesigned from dark-themed multi-page site to single-page editorial layout
-- Design cloned from elazarpimentel.com (terracotta → blue accent)
-- Old site preserved in `public_html/` for reference
-- Tools (password gen, IP detect) converted from PHP to client-side JS
-- Emoji tool dropped (database-dependent)
-- deploytohostinger.sh no longer used (kept in repo, gitignored)
-- Old URL paths redirected in vercel.json (/tools/, /about.html, /index-eng.html, etc.)
-
-## TODO
-- [ ] Create Pensanta-branded favicon.svg (currently using EP monogram from elazarpimentel.com)
-- [ ] Create Pensanta-branded og-image.jpg (currently reusing elazarpimentel.com image)
-- [ ] Record ayudem.mp4 video for portfolio
-- [ ] Record borisiuk.mp4 video for portfolio
-- [ ] Submit updated sitemap to GSC
+- Deploy: `gitpush.sh` (Vercel auto-deploys on push)
 
 ## GSC Service Account
 `gsc-service-account.json` (gitignored) — shared with other sites.
-
----
-Last updated: 2026-02-09

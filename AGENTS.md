@@ -1,22 +1,19 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-HTML entry points (`index.html`, `index-eng.html`, `about*.html`, `tools.html`) live in the repo root so `server.js` can serve them directly. Locale-specific copies live under `en/` and `es/`, reusable fragments plus YAML content (`portfolio.yaml`, `digitally-carved-pensanta.yaml`) land in `proyectos/`. Static assets follow predictable directories: `css/` for compiled styles, `img/` for hero/portfolio imagery (screenshots land in `img/portfolio/slug-size.png`), and `favicon.*` at the root. Automation helpers (`add-portfolio-site.sh`, `deploytohostinger.sh`, `batch-screenshots.js`) stay at the top level so Express’ static middleware can expose them when needed.
+Single-page static site, no build step, zero dependencies. `index.html` is the Spanish homepage at the repo root; `en/index.html` is the English version. All styles live in `styles.css`; client-side behavior (menu, tracking, reduced-motion, password generator, IP detector) is in `site.js`. Portfolio video previews sit in `videos/*.mp4` with `portfolio-poster.svg` as fallback. `vercel.json` handles redirects from legacy URL paths. `public_html/` preserves the old multi-page site for reference and is not deployed. `scripts/` contains legacy portfolio tooling not used in the current flow.
 
 ## Build, Test, and Development Commands
-- `npm install` – install Node dependencies (Express server, PostCSS utilities, Puppeteer).
-- `npm start` – runs `node server.js`, serving the static site with SPA-style fallback on port 3987 (respects `PORT` in `.env.local`).
-- `node batch-screenshots.js` – captures/update 800x500 portfolio shots and writes them into `img/portfolio/`.
-- `bash deploytohostinger.sh` – wraps the rsync/ftp publish flow; update credentials via `.env.local` before running.
+No install, no build. Open `index.html` directly in a browser to preview changes — do not run dev servers. Deploy with `gitpush.sh`, which commits and pushes; Vercel auto-deploys on push to `main`.
 
 ## Coding Style & Naming Conventions
-HTML and JS use 2-space indentation; CSS follows the compact format in `css/*.css`. Favor existing utility classes (e.g., `hero-section`, `cta-button`) to keep PurgeCSS efficient. Filenames stay kebab-case (`fabricamos-mochilas.html`), assets stay lowercase with slug + dimensions (`client-800x500.png`). Keep scripts CommonJS (`require`/`module.exports`) to match `server.js`. Run PostCSS manually (`npx postcss css/main.css -o css/main.min.css`) when you add new utilities so PurgeCSS can purge safely.
+HTML, CSS, and JS use 2-space indentation. CSS variables for the design tokens (`--color-cream`, `--color-charcoal`, `--color-accent`, `--color-accent-hover`, `--color-gold`, `--color-sage`) are defined at the top of `styles.css` — reuse them instead of hard-coded hex values. Typography: Cormorant Garamond (display) + DM Sans (body), loaded from Google Fonts. Filenames are kebab-case (`lo-de-victor.mp4`). Keep `site.js` dependency-free; no module bundler runs over it.
 
 ## Testing Guidelines
-There is no automated test suite. After content or layout updates, run `npm start` and verify `/`, `/en/`, and `/es/` render consistently. Use `node batch-screenshots.js` to refresh visual baselines when portfolio entries change, then diff the PNGs before committing. Before deployment, open the main pages in Chrome’s responsive mode (800x500 and mobile) to catch regressions.
+No automated tests. After content or layout changes, open `index.html` and `en/index.html` in the browser and verify both locales render consistently. Check responsive behavior in Chrome DevTools (mobile + desktop widths). Verify tracking still fires for WhatsApp, portfolio, and tool-usage events via the browser console or GTM preview.
 
 ## Commit & Pull Request Guidelines
-Recent history (`git log --oneline`) shows timestamp-style summaries such as `2025-11-18-0443`. Follow the `YYYY-MM-DD-HHmm` prefix, optionally adding a short descriptor (`2025-11-18-0443 update hero`). Each PR should include a scope summary, list of touched pages/scripts, screenshots for UI shifts, and references to related YAML or portfolio assets. Keep secrets in `.env.local`, check in only intended artifacts, and link deployments or tracking issues.
+Commit history follows a `YYYY-MM-DD-HHmm` timestamp convention (e.g. `2026-02-15-2344`), optionally with a short descriptor. Keep the prefix. `gitpush.sh` handles the commit + push in one step. PRs should list touched files, note any redirect/routing changes in `vercel.json`, and include a before/after screenshot for visual shifts.
 
 ## Security & Configuration Tips
-Store API keys, database credentials, or alternate ports in `.env.local`; `server.js` loads it via `dotenv`. Never commit `.env.local` or `logs/`. When adding automation, prefer environment variables over inline credentials so the deploy flow works locally and on Hostinger.
+Never commit `.env*`, `gsc-service-account.json`, or `.vercel/` — all are gitignored. Analytics IDs (GTM-PBM2Z8BN, GA4 G-5ZVYDQXCG7) and the WhatsApp number (5491137990312) are embedded in the HTML; update them in both `index.html` and `en/index.html` together to keep locales in sync.
