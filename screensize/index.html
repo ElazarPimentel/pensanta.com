@@ -35,6 +35,14 @@
     .section-label { grid-column: 1 / -1; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin: 1.25rem 0 0.25rem; }
     .section-label:first-child { margin-top: 0; }
     .breakpoint { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 3px; background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .sizes { max-width: 1100px; margin: 0 0 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card); overflow: hidden; }
+    .sizes h2 { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin: 0; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600; }
+    .sizes table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .sizes th, .sizes td { text-align: left; padding: 0.55rem 1rem; border-bottom: 1px solid var(--border); }
+    .sizes tr:last-child td { border-bottom: none; }
+    .sizes th { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+    .sizes td.size { font-weight: 600; white-space: nowrap; }
+    .sizes td.note { color: var(--muted); }
     footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.8rem; }
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
@@ -45,6 +53,28 @@
 
   <div class="hero"><span id="vw">—</span><span class="x">×</span><span id="vh">—</span><span class="unit">px · CSS viewport</span></div>
   <div class="ratio" id="ratio"></div>
+
+  <section class="sizes" aria-label="Standard website test sizes">
+    <h2>Standard website test sizes</h2>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Viewport</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Phone (small)</td><td class="size">360 × 640</td><td class="note">Android baseline</td></tr>
+        <tr><td>Phone (modern)</td><td class="size">390 × 844</td><td class="note">iPhone 14/15</td></tr>
+        <tr><td>Phone (large)</td><td class="size">430 × 932</td><td class="note">iPhone 15 Pro Max</td></tr>
+        <tr><td>Tablet (portrait)</td><td class="size">768 × 1024</td><td class="note">iPad classic</td></tr>
+        <tr><td>Tablet (landscape)</td><td class="size">1024 × 768</td><td class="note">iPad classic rotated</td></tr>
+        <tr><td>Notebook</td><td class="size">1366 × 768</td><td class="note">most common laptop</td></tr>
+        <tr><td>Notebook (HiDPI)</td><td class="size">1440 × 900</td><td class="note">MacBook Air 13"</td></tr>
+        <tr><td>Desktop</td><td class="size">1920 × 1080</td><td class="note">Full HD baseline</td></tr>
+        <tr><td>Big monitor</td><td class="size">2560 × 1440</td><td class="note">QHD / 27"</td></tr>
+        <tr><td>Ultra-wide</td><td class="size">3440 × 1440</td><td class="note">21:9 monitor</td></tr>
+        <tr><td>Large TV</td><td class="size">3840 × 2160</td><td class="note">4K UHD</td></tr>
+      </tbody>
+    </table>
+  </section>
 
   <dl class="grid" id="grid"></dl>
 
